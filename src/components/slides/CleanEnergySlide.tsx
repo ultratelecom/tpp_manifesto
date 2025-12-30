@@ -1,23 +1,31 @@
 "use client";
 
+import Image from "next/image";
+
 export default function CleanEnergySlide() {
   return (
     <section id="clean-energy" className="slide bg-white relative">
-      <div className="relative z-10 flex flex-col lg:flex-row items-center justify-center gap-24 w-full h-full px-20">
-        {/* Left: Visual */}
-        <div className="flex-shrink-0 flex flex-col items-center justify-center">
-          <div className="text-[180px]">☀️</div>
-          
-          {/* SPACE */}
-          <div className="h-8" />
-          
-          <div className="text-lg text-emerald-600 font-semibold tracking-widest uppercase">
-            Initiative 01
+      <div className="relative z-10 flex flex-col lg:flex-row items-center justify-center gap-20 w-full h-full px-20">
+        {/* Left: Large Image */}
+        <div className="flex-shrink-0 relative w-full lg:w-[450px] h-[400px] lg:h-[500px] rounded-3xl overflow-hidden shadow-2xl">
+          <Image
+            src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=900&h=1000&fit=crop"
+            alt="Solar panels installation"
+            fill
+            className="object-cover"
+          />
+          {/* Subtle gradient overlay at bottom */}
+          <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black/30 to-transparent" />
+          {/* Initiative label */}
+          <div className="absolute bottom-6 left-6 text-white">
+            <div className="text-sm font-semibold tracking-widest uppercase opacity-80">
+              Initiative 01
+            </div>
           </div>
         </div>
 
         {/* Right: Content */}
-        <div className="flex-1 max-w-2xl">
+        <div className="flex-1 max-w-xl">
           <div className="text-emerald-600 font-semibold text-lg tracking-wide uppercase">
             Clean Energy Transition
           </div>

@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 export default function TargetsSlide() {
   const targets = [
     {
@@ -23,7 +25,19 @@ export default function TargetsSlide() {
   ];
 
   return (
-    <section id="targets" className="slide bg-white relative">
+    <section id="targets" className="slide bg-white relative overflow-hidden">
+      {/* Background image - blurred with white overlay */}
+      <div className="absolute inset-0">
+        <Image
+          src="https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?w=1920&h=1080&fit=crop"
+          alt="Tobago coastline"
+          fill
+          className="object-cover blur-xl scale-110"
+        />
+        {/* White overlay */}
+        <div className="absolute inset-0 bg-white/90" />
+      </div>
+
       <div className="relative z-10 flex flex-col items-center justify-center w-full h-full px-20">
         {/* Section title */}
         <h2

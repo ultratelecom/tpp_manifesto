@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 export default function DigitalSlide() {
   const roles = [
     "Digital Content Creators",
@@ -12,9 +14,9 @@ export default function DigitalSlide() {
 
   return (
     <section id="digital" className="slide bg-white relative">
-      <div className="relative z-10 flex flex-col lg:flex-row items-center justify-center gap-24 w-full h-full px-20">
+      <div className="relative z-10 flex flex-col lg:flex-row items-center justify-center gap-20 w-full h-full px-20">
         {/* Left: Content */}
-        <div className="flex-1 max-w-2xl">
+        <div className="flex-1 max-w-xl">
           <div className="text-blue-600 font-semibold text-lg tracking-wide uppercase">
             Digital Transformation
           </div>
@@ -58,7 +60,7 @@ export default function DigitalSlide() {
           </div>
 
           {/* SPACE */}
-          <div className="h-16" />
+          <div className="h-12" />
 
           {/* Roles */}
           <div>
@@ -82,15 +84,21 @@ export default function DigitalSlide() {
           </p>
         </div>
 
-        {/* Right: Visual */}
-        <div className="flex-shrink-0 flex flex-col items-center justify-center">
-          <div className="text-[180px]">💻</div>
-          
-          {/* SPACE */}
-          <div className="h-8" />
-          
-          <div className="text-lg text-blue-600 font-semibold tracking-widest uppercase">
-            Initiative 02
+        {/* Right: Large Image */}
+        <div className="flex-shrink-0 relative w-full lg:w-[450px] h-[400px] lg:h-[500px] rounded-3xl overflow-hidden shadow-2xl">
+          <Image
+            src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=900&h=1000&fit=crop"
+            alt="Digital technology"
+            fill
+            className="object-cover"
+          />
+          {/* Subtle gradient overlay at bottom */}
+          <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black/30 to-transparent" />
+          {/* Initiative label */}
+          <div className="absolute bottom-6 left-6 text-white">
+            <div className="text-sm font-semibold tracking-widest uppercase opacity-80">
+              Initiative 02
+            </div>
           </div>
         </div>
       </div>

@@ -1,19 +1,21 @@
 "use client";
 
+import Image from "next/image";
+
 export default function DefinitionSlide() {
   const pillars = [
     {
-      icon: "💰",
+      image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=400&h=400&fit=crop",
       title: "Minimum Living Wage",
       description: "Fair compensation that meets the cost of living",
     },
     {
-      icon: "🔄",
+      image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&h=400&fit=crop",
       title: "Continuous Employment",
       description: "Stable, ongoing work without interruption",
     },
     {
-      icon: "📅",
+      image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=400&h=400&fit=crop",
       title: "5+ Year Duration",
       description: "Long-term security, not temporary contracts",
     },
@@ -49,14 +51,24 @@ export default function DefinitionSlide() {
         {/* SPACE */}
         <div className="h-24" />
 
-        {/* Three pillars */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-24 w-full max-w-6xl">
+        {/* Three pillars with images */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-20 w-full max-w-6xl">
           {pillars.map((pillar) => (
             <div
               key={pillar.title}
               className="text-center"
             >
-              <div className="text-7xl">{pillar.icon}</div>
+              {/* Circular image with blue tint overlay */}
+              <div className="relative w-32 h-32 mx-auto rounded-full overflow-hidden">
+                <Image
+                  src={pillar.image}
+                  alt={pillar.title}
+                  fill
+                  className="object-cover"
+                />
+                {/* Blue tint overlay */}
+                <div className="absolute inset-0 bg-[var(--tpp-blue)] opacity-20" />
+              </div>
               
               {/* SPACE */}
               <div className="h-8" />

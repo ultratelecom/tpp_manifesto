@@ -1,10 +1,30 @@
 "use client";
 
+import Image from "next/image";
+
 export default function ImpactSlide() {
   const sectors = [
-    { icon: "☀️", label: "Clean Energy", jobs: 400, color: "#10B981" },
-    { icon: "💻", label: "Digital", jobs: 200, color: "#3B82F6" },
-    { icon: "🏗️", label: "Infrastructure", jobs: 4275, color: "#F59E0B" },
+    { 
+      image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=400&h=400&fit=crop",
+      label: "Clean Energy", 
+      jobs: 400, 
+      color: "#10B981",
+      overlay: "bg-emerald-600"
+    },
+    { 
+      image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=400&h=400&fit=crop",
+      label: "Digital", 
+      jobs: 200, 
+      color: "#3B82F6",
+      overlay: "bg-blue-600"
+    },
+    { 
+      image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&h=400&fit=crop",
+      label: "Infrastructure", 
+      jobs: 4275, 
+      color: "#F59E0B",
+      overlay: "bg-amber-600"
+    },
   ];
 
   return (
@@ -40,20 +60,38 @@ export default function ImpactSlide() {
         {/* SPACE */}
         <div className="h-24" />
 
-        {/* Three sectors */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-24 w-full max-w-5xl">
+        {/* Three sectors with images */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-20 w-full max-w-5xl">
           {sectors.map((sector) => (
             <div
               key={sector.label}
               className="text-center"
             >
-              <div className="text-6xl mb-8">{sector.icon}</div>
+              {/* Circular image with color overlay */}
+              <div className="relative w-36 h-36 mx-auto rounded-full overflow-hidden shadow-lg">
+                <Image
+                  src={sector.image}
+                  alt={sector.label}
+                  fill
+                  className="object-cover"
+                />
+                {/* Color overlay */}
+                <div className={`absolute inset-0 ${sector.overlay} opacity-30`} />
+              </div>
+              
+              {/* SPACE */}
+              <div className="h-8" />
+              
               <div
-                className="text-5xl font-bold mb-5"
+                className="text-5xl font-bold"
                 style={{ color: sector.color, fontFamily: "var(--font-heading)" }}
               >
                 +{sector.jobs.toLocaleString()}
               </div>
+              
+              {/* SPACE */}
+              <div className="h-4" />
+              
               <div className="text-xl text-[var(--text-primary)] font-medium">
                 {sector.label}
               </div>
