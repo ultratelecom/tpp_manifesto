@@ -65,10 +65,10 @@ export default function ImpactSlide() {
           {sectors.map((sector) => (
             <div
               key={sector.label}
-              className="text-center"
+              className="flex flex-col items-center text-center"
             >
-              {/* Circular image with color overlay */}
-              <div className="relative w-36 h-36 mx-auto rounded-full overflow-hidden shadow-lg">
+              {/* Circular image with color overlay - CENTERED */}
+              <div className="relative w-36 h-36 rounded-full overflow-hidden shadow-lg">
                 <Image
                   src={sector.image}
                   alt={sector.label}

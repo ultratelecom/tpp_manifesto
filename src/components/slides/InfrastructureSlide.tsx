@@ -74,10 +74,10 @@ export default function InfrastructureSlide() {
           {initiatives.map((initiative) => (
             <div
               key={initiative.name}
-              className="text-center"
+              className="flex flex-col items-center text-center"
             >
-              {/* Square image with rounded corners */}
-              <div className="relative w-full aspect-square rounded-2xl overflow-hidden shadow-lg mx-auto max-w-[180px]">
+              {/* Square image with rounded corners - CENTERED */}
+              <div className="relative w-[180px] h-[180px] rounded-2xl overflow-hidden shadow-lg">
                 <Image
                   src={initiative.image}
                   alt={initiative.name}

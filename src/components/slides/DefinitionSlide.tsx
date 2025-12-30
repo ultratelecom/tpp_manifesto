@@ -56,10 +56,10 @@ export default function DefinitionSlide() {
           {pillars.map((pillar) => (
             <div
               key={pillar.title}
-              className="text-center"
+              className="flex flex-col items-center text-center"
             >
-              {/* Circular image with blue tint overlay */}
-              <div className="relative w-32 h-32 mx-auto rounded-full overflow-hidden">
+              {/* Circular image with blue tint overlay - CENTERED */}
+              <div className="relative w-32 h-32 rounded-full overflow-hidden">
                 <Image
                   src={pillar.image}
                   alt={pillar.title}
