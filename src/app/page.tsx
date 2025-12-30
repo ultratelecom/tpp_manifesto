@@ -7,6 +7,13 @@ import TargetsSlide from "@/components/slides/TargetsSlide";
 import CleanEnergySlide from "@/components/slides/CleanEnergySlide";
 import DigitalSlide from "@/components/slides/DigitalSlide";
 import InfrastructureSlide from "@/components/slides/InfrastructureSlide";
+import ConstitutionalAutonomySlide from "@/components/slides/ConstitutionalAutonomySlide";
+import EconomicGrowthSlide from "@/components/slides/EconomicGrowthSlide";
+import SustainableTourismSlide from "@/components/slides/SustainableTourismSlide";
+import FoodSecuritySlide from "@/components/slides/FoodSecuritySlide";
+import PublicInfrastructureSlide from "@/components/slides/PublicInfrastructureSlide";
+import PublicServiceSlide from "@/components/slides/PublicServiceSlide";
+import AffordableHousingSlide from "@/components/slides/AffordableHousingSlide";
 import ClosingSlide from "@/components/slides/ClosingSlide";
 import SideNavigation from "@/components/ui/SideNavigation";
 import ScrollProgress from "@/components/ui/ScrollProgress";
@@ -19,6 +26,13 @@ const slideIds = [
   "clean-energy",
   "digital",
   "infrastructure",
+  "autonomy",
+  "economic-growth",
+  "tourism",
+  "food-security",
+  "public-infrastructure",
+  "public-service",
+  "housing",
   "closing",
 ];
 
@@ -31,7 +45,7 @@ export default function Home() {
       {/* Side navigation dots */}
       <SideNavigation totalSlides={slideIds.length} slideIds={slideIds} />
 
-      {/* Slides */}
+      {/* Slides - Sustainable Job Creation Section */}
       <HeroSlide />
       <DefinitionSlide />
       <ImpactSlide />
@@ -39,6 +53,17 @@ export default function Home() {
       <CleanEnergySlide />
       <DigitalSlide />
       <InfrastructureSlide />
+
+      {/* Slides - Policy Focus Areas */}
+      <ConstitutionalAutonomySlide />
+      <EconomicGrowthSlide />
+      <SustainableTourismSlide />
+      <FoodSecuritySlide />
+      <PublicInfrastructureSlide />
+      <PublicServiceSlide />
+      <AffordableHousingSlide />
+
+      {/* Closing */}
       <ClosingSlide />
     </main>
   );
