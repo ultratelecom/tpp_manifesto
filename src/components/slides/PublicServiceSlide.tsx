@@ -118,8 +118,8 @@ export default function PublicServiceSlide() {
         {/* Right: Large Image */}
         <div className="flex-shrink-0 relative w-full lg:w-[450px] h-[400px] lg:h-[500px] rounded-3xl overflow-hidden shadow-2xl">
           <Image
-            src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=900&h=1000&fit=crop"
-            alt="Modern office workspace"
+            src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=900&h=1000&fit=crop"
+            alt="Government service and teamwork"
             fill
             className="object-cover"
           />

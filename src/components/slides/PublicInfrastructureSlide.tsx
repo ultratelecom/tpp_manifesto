@@ -5,22 +5,22 @@ import Image from "next/image";
 export default function PublicInfrastructureSlide() {
   const initiatives = [
     {
-      image: "https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=400&h=400&fit=crop",
+      image: "https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?w=400&h=400&fit=crop",
       title: "Transportation",
       description: "Roads, bypasses, connectors",
     },
     {
-      image: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=400&h=400&fit=crop",
+      image: "https://images.unsplash.com/photo-1570125909232-eb263c188f7e?w=400&h=400&fit=crop",
       title: "Transit Hubs",
       description: "Scarborough, Mason Hall, Roxborough",
     },
     {
-      image: "https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?w=400&h=400&fit=crop",
+      image: "https://images.unsplash.com/photo-1605281317010-fe5ffe798166?w=400&h=400&fit=crop",
       title: "Maritime",
       description: "Cruise terminal, marina",
     },
     {
-      image: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=400&h=400&fit=crop",
+      image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=400&h=400&fit=crop",
       title: "Urban Growth",
       description: "City of Scarborough expansion",
     },

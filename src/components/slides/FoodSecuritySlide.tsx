@@ -50,7 +50,7 @@ export default function FoodSecuritySlide() {
         {/* Hero image */}
         <div className="relative w-full max-w-4xl h-[280px] rounded-3xl overflow-hidden shadow-2xl">
           <Image
-            src="https://images.unsplash.com/photo-1500937386664-56d1dfef3f32?w=1200&h=600&fit=crop"
+            src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=1200&h=600&fit=crop"
             alt="Tropical agriculture"
             fill
             className="object-cover"

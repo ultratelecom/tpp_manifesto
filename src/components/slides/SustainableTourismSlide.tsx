@@ -11,22 +11,22 @@ export default function SustainableTourismSlide() {
 
   const pillars = [
     {
-      image: "https://images.unsplash.com/photo-1506929562872-bb421503ef21?w=400&h=400&fit=crop",
+      image: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=400&h=400&fit=crop",
       title: "Infrastructure",
       description: "World-class amenities",
     },
     {
-      image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=400&h=400&fit=crop",
+      image: "https://images.unsplash.com/photo-1582719508461-905c673771fd?w=400&h=400&fit=crop",
       title: "Luxury Hotels",
       description: "Premium accommodations",
     },
     {
-      image: "https://images.unsplash.com/photo-1531219572328-a0171b4448a3?w=400&h=400&fit=crop",
+      image: "https://images.unsplash.com/photo-1528543606781-2f6e6857f318?w=400&h=400&fit=crop",
       title: "Community Tourism",
       description: "Authentic experiences",
     },
     {
-      image: "https://images.unsplash.com/photo-1448375240586-882707db888b?w=400&h=400&fit=crop",
+      image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&h=400&fit=crop",
       title: "Eco-Tourism",
       description: "Nature trails & heritage",
     },
