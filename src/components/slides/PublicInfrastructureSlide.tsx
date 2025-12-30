@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function PublicInfrastructureSlide() {
   const initiatives = [
@@ -33,30 +34,74 @@ export default function PublicInfrastructureSlide() {
     "Transit Hub & Commercial Centre",
   ];
 
+  const fadeIn = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 0.6, ease: "easeOut" as const } }
+  };
+
+  const fadeUp = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" as const } }
+  };
+
+  const scaleUp = {
+    hidden: { opacity: 0, scale: 0.9 },
+    visible: { opacity: 1, scale: 1, transition: { duration: 0.6, ease: "easeOut" as const } }
+  };
+
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.12, delayChildren: 0.2 }
+    }
+  };
+
+  const cardItem = {
+    hidden: { opacity: 0, y: 30, scale: 0.95 },
+    visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.5, ease: "easeOut" as const } }
+  };
+
   return (
     <section id="public-infrastructure" className="slide bg-white relative">
       <div className="relative z-10 flex flex-col items-center justify-center w-full h-full px-20">
         {/* Section label */}
-        <div className="text-orange-600 font-semibold text-lg tracking-wide uppercase">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={fadeIn}
+          className="text-orange-600 font-semibold text-lg tracking-wide uppercase"
+        >
           Policy Focus
-        </div>
+        </motion.div>
 
         {/* SPACE */}
         <div className="h-6" />
 
         {/* Main heading */}
-        <h2
+        <motion.h2
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={fadeUp}
           className="text-5xl lg:text-7xl font-bold text-[var(--text-primary)] text-center"
           style={{ fontFamily: "var(--font-heading)" }}
         >
           Public <span className="text-orange-600">Infrastructure</span>
-        </h2>
+        </motion.h2>
 
         {/* SPACE */}
         <div className="h-8" />
 
         {/* Investment headline */}
-        <div className="text-center">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={scaleUp}
+          className="text-center"
+        >
           <div
             className="text-6xl lg:text-7xl font-bold text-orange-600"
             style={{ fontFamily: "var(--font-heading)" }}
@@ -70,15 +115,25 @@ export default function PublicInfrastructureSlide() {
           <div className="text-xl text-[var(--text-secondary)]">
             Annual Investment • 2026-2045
           </div>
-        </div>
+        </motion.div>
 
         {/* SPACE */}
         <div className="h-16" />
 
         {/* Four initiatives with images */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 w-full max-w-5xl">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          variants={staggerContainer}
+          className="grid grid-cols-2 lg:grid-cols-4 gap-12 w-full max-w-5xl"
+        >
           {initiatives.map((item) => (
-            <div key={item.title} className="flex flex-col items-center text-center">
+            <motion.div
+              key={item.title}
+              variants={cardItem}
+              className="flex flex-col items-center text-center"
+            >
               {/* Square image with rounded corners */}
               <div className="relative w-[150px] h-[150px] rounded-2xl overflow-hidden shadow-lg">
                 <Image
@@ -103,15 +158,21 @@ export default function PublicInfrastructureSlide() {
               <p className="text-sm text-[var(--text-secondary)]">
                 {item.description}
               </p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* SPACE */}
         <div className="h-16" />
 
         {/* Major PPP projects */}
-        <div className="text-center">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          variants={fadeIn}
+          className="text-center"
+        >
           <div className="text-sm text-[var(--text-muted)] uppercase tracking-wider mb-4">
             Major PPP Projects
           </div>
@@ -123,9 +184,8 @@ export default function PublicInfrastructureSlide() {
               </span>
             ))}
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
 }
-

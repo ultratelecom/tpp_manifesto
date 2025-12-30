@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function ImpactSlide() {
   const sectors = [
@@ -27,48 +28,100 @@ export default function ImpactSlide() {
     },
   ];
 
+  const fadeIn = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 0.6, ease: "easeOut" as const } }
+  };
+
+  const fadeUp = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" as const } }
+  };
+
+  const scaleUp = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: { opacity: 1, scale: 1, transition: { duration: 0.6, ease: "easeOut" as const } }
+  };
+
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.15, delayChildren: 0.3 }
+    }
+  };
+
+  const sectorItem = {
+    hidden: { opacity: 0, y: 30, scale: 0.95 },
+    visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.5, ease: "easeOut" as const } }
+  };
+
   return (
     <section id="impact" className="slide bg-white relative">
       <div className="relative z-10 flex flex-col items-center justify-center w-full h-full px-20">
         {/* Big number */}
-        <div
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={scaleUp}
           className="text-[10rem] lg:text-[14rem] font-extrabold text-[var(--tpp-blue)] leading-none tracking-tighter"
           style={{ fontFamily: "var(--font-heading)" }}
         >
           4,875<span className="text-[6rem] lg:text-[8rem]">+</span>
-        </div>
+        </motion.div>
 
         {/* SPACE */}
         <div className="h-16" />
 
         {/* Label */}
-        <h2
+        <motion.h2
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={fadeUp}
           className="text-5xl lg:text-7xl font-bold text-[var(--text-primary)] text-center"
           style={{ fontFamily: "var(--font-heading)" }}
         >
           Jobs Created
-        </h2>
+        </motion.h2>
 
         {/* SPACE */}
         <div className="h-8" />
 
         {/* Subtitle */}
-        <p className="text-xl lg:text-2xl text-[var(--text-secondary)] text-center max-w-3xl">
+        <motion.p
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={fadeIn}
+          className="text-xl lg:text-2xl text-[var(--text-secondary)] text-center max-w-3xl"
+        >
           Across clean energy, digital transformation, and physical infrastructure
-        </p>
+        </motion.p>
 
         {/* SPACE */}
         <div className="h-24" />
 
         {/* Three sectors with images */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-20 w-full max-w-5xl">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          variants={staggerContainer}
+          className="grid grid-cols-1 md:grid-cols-3 gap-20 w-full max-w-5xl"
+        >
           {sectors.map((sector) => (
-            <div
+            <motion.div
               key={sector.label}
+              variants={sectorItem}
               className="flex flex-col items-center text-center"
             >
               {/* Circular image with color overlay - CENTERED */}
-              <div className="relative w-36 h-36 rounded-full overflow-hidden shadow-lg">
+              <motion.div
+                variants={scaleUp}
+                className="relative w-36 h-36 rounded-full overflow-hidden shadow-lg"
+              >
                 <Image
                   src={sector.image}
                   alt={sector.label}
@@ -77,7 +130,7 @@ export default function ImpactSlide() {
                 />
                 {/* Color overlay */}
                 <div className={`absolute inset-0 ${sector.overlay} opacity-30`} />
-              </div>
+              </motion.div>
               
               {/* SPACE */}
               <div className="h-8" />
@@ -95,9 +148,9 @@ export default function ImpactSlide() {
               <div className="text-xl text-[var(--text-primary)] font-medium">
                 {sector.label}
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

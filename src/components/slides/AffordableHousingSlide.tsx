@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function AffordableHousingSlide() {
   const programmes = [
@@ -26,40 +27,90 @@ export default function AffordableHousingSlide() {
     },
   ];
 
+  const fadeIn = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 0.6, ease: "easeOut" as const } }
+  };
+
+  const fadeUp = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" as const } }
+  };
+
+  const scaleUp = {
+    hidden: { opacity: 0, scale: 0.9 },
+    visible: { opacity: 1, scale: 1, transition: { duration: 0.5, ease: "easeOut" as const } }
+  };
+
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.12, delayChildren: 0.3 }
+    }
+  };
+
+  const cardItem = {
+    hidden: { opacity: 0, y: 30, scale: 0.95 },
+    visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.5, ease: "easeOut" as const } }
+  };
+
   return (
     <section id="housing" className="slide bg-white relative">
       <div className="relative z-10 flex flex-col items-center justify-center w-full h-full px-20">
         {/* Section label */}
-        <div className="text-rose-600 font-semibold text-lg tracking-wide uppercase">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={fadeIn}
+          className="text-rose-600 font-semibold text-lg tracking-wide uppercase"
+        >
           Policy Focus
-        </div>
+        </motion.div>
 
         {/* SPACE */}
         <div className="h-6" />
 
         {/* Main heading */}
-        <h2
+        <motion.h2
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={fadeUp}
           className="text-5xl lg:text-7xl font-bold text-[var(--text-primary)] text-center"
           style={{ fontFamily: "var(--font-heading)" }}
         >
           Affordable <span className="text-rose-600">Housing</span>
-        </h2>
+        </motion.h2>
 
         {/* SPACE */}
         <div className="h-8" />
 
         {/* Subtitle */}
-        <p className="text-xl lg:text-2xl text-[var(--text-secondary)] text-center max-w-3xl">
+        <motion.p
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={fadeIn}
+          className="text-xl lg:text-2xl text-[var(--text-secondary)] text-center max-w-3xl"
+        >
           A home for every Tobagonian — ensuring access to housing 
           that addresses current and future needs
-        </p>
+        </motion.p>
 
         {/* SPACE */}
         <div className="h-12" />
 
         {/* Investment & Coverage stats */}
-        <div className="flex gap-16 lg:gap-24">
-          <div className="text-center">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={staggerContainer}
+          className="flex gap-16 lg:gap-24"
+        >
+          <motion.div variants={scaleUp} className="text-center">
             <div
               className="text-6xl lg:text-7xl font-bold text-rose-600"
               style={{ fontFamily: "var(--font-heading)" }}
@@ -80,9 +131,9 @@ export default function AffordableHousingSlide() {
             <div className="text-sm text-[var(--text-muted)]">
               Annual 2026-2045
             </div>
-          </div>
+          </motion.div>
 
-          <div className="text-center">
+          <motion.div variants={scaleUp} className="text-center">
             <div
               className="text-6xl lg:text-7xl font-bold text-[var(--text-primary)]"
               style={{ fontFamily: "var(--font-heading)" }}
@@ -103,16 +154,26 @@ export default function AffordableHousingSlide() {
             <div className="text-sm text-[var(--text-muted)]">
               Eligible households
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
         {/* SPACE */}
         <div className="h-20" />
 
         {/* Four programmes with images */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 w-full max-w-5xl">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          variants={staggerContainer}
+          className="grid grid-cols-2 lg:grid-cols-4 gap-12 w-full max-w-5xl"
+        >
           {programmes.map((prog) => (
-            <div key={prog.title} className="flex flex-col items-center text-center">
+            <motion.div
+              key={prog.title}
+              variants={cardItem}
+              className="flex flex-col items-center text-center"
+            >
               {/* Square image with rounded corners */}
               <div className="relative w-[150px] h-[150px] rounded-2xl overflow-hidden shadow-lg">
                 <Image
@@ -137,11 +198,10 @@ export default function AffordableHousingSlide() {
               <p className="text-sm text-[var(--text-secondary)]">
                 {prog.description}
               </p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
 }
-

@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function DefinitionSlide() {
   const pillars = [
@@ -21,22 +22,78 @@ export default function DefinitionSlide() {
     },
   ];
 
+  // Animation variants
+  const fadeIn = {
+    hidden: { opacity: 0 },
+    visible: { 
+      opacity: 1,
+      transition: { duration: 0.6, ease: "easeOut" as const }
+    }
+  };
+
+  const fadeUp = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.7, ease: "easeOut" as const }
+    }
+  };
+
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.3
+      }
+    }
+  };
+
+  const pillarItem = {
+    hidden: { opacity: 0, y: 30, scale: 0.95 },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      scale: 1,
+      transition: { duration: 0.5, ease: "easeOut" as const }
+    }
+  };
+
+  const imageScale = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: { 
+      opacity: 1, 
+      scale: 1,
+      transition: { duration: 0.6, ease: "easeOut" as const }
+    }
+  };
+
   return (
     <section id="definition" className="slide bg-white relative">
       <div className="relative z-10 flex flex-col items-center justify-center w-full h-full px-20">
         {/* Large section title */}
-        <h2
+        <motion.h2
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={fadeIn}
           className="text-6xl lg:text-8xl font-bold text-[var(--tpp-blue)] tracking-tight text-center"
           style={{ fontFamily: "var(--font-heading)" }}
         >
           Our Vision
-        </h2>
+        </motion.h2>
 
         {/* SPACE */}
         <div className="h-16" />
 
         {/* Quote */}
-        <blockquote
+        <motion.blockquote
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={fadeUp}
           className="text-2xl md:text-3xl lg:text-4xl font-medium text-[var(--text-primary)] max-w-5xl text-center leading-relaxed"
           style={{ fontFamily: "var(--font-heading)" }}
         >
@@ -46,20 +103,30 @@ export default function DefinitionSlide() {
           <span className="text-[var(--tpp-blue)] font-semibold">continuous employment</span>,{" "}
           and lasts{" "}
           <span className="text-[var(--tpp-blue)] font-semibold">at least five years</span>."
-        </blockquote>
+        </motion.blockquote>
 
         {/* SPACE */}
         <div className="h-24" />
 
         {/* Three pillars with images */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-20 w-full max-w-6xl">
+        <motion.div 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          variants={staggerContainer}
+          className="grid grid-cols-1 md:grid-cols-3 gap-20 w-full max-w-6xl"
+        >
           {pillars.map((pillar) => (
-            <div
+            <motion.div
               key={pillar.title}
+              variants={pillarItem}
               className="flex flex-col items-center text-center"
             >
               {/* Circular image with blue tint overlay - CENTERED */}
-              <div className="relative w-32 h-32 rounded-full overflow-hidden">
+              <motion.div 
+                variants={imageScale}
+                className="relative w-32 h-32 rounded-full overflow-hidden"
+              >
                 <Image
                   src={pillar.image}
                   alt={pillar.title}
@@ -68,7 +135,7 @@ export default function DefinitionSlide() {
                 />
                 {/* Blue tint overlay */}
                 <div className="absolute inset-0 bg-[var(--tpp-blue)] opacity-20" />
-              </div>
+              </motion.div>
               
               {/* SPACE */}
               <div className="h-8" />
@@ -86,9 +153,9 @@ export default function DefinitionSlide() {
               <p className="text-lg text-[var(--text-secondary)] leading-relaxed">
                 {pillar.description}
               </p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

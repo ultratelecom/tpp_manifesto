@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function EconomicGrowthSlide() {
   const initiatives = [
@@ -10,11 +11,35 @@ export default function EconomicGrowthSlide() {
     { title: "Export Enhancement", description: "Access to international markets" },
   ];
 
+  const slideInLeft = {
+    hidden: { opacity: 0, x: -60 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" as const } }
+  };
+
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.12, delayChildren: 0.2 }
+    }
+  };
+
+  const staggerItem = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" as const } }
+  };
+
   return (
     <section id="economic-growth" className="slide bg-white relative">
       <div className="relative z-10 flex flex-col lg:flex-row items-center justify-center gap-20 w-full h-full px-20">
         {/* Left: Large Image */}
-        <div className="flex-shrink-0 relative w-full lg:w-[450px] h-[400px] lg:h-[500px] rounded-3xl overflow-hidden shadow-2xl">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={slideInLeft}
+          className="flex-shrink-0 relative w-full lg:w-[450px] h-[400px] lg:h-[500px] rounded-3xl overflow-hidden shadow-2xl"
+        >
           <Image
             src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=900&h=1000&fit=crop"
             alt="Modern business district"
@@ -29,37 +54,44 @@ export default function EconomicGrowthSlide() {
               Pathways to Prosperity
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Right: Content */}
-        <div className="flex-1 max-w-xl">
-          <div className="text-[var(--tpp-blue)] font-semibold text-lg tracking-wide uppercase">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={staggerContainer}
+          className="flex-1 max-w-xl"
+        >
+          <motion.div variants={staggerItem} className="text-[var(--tpp-blue)] font-semibold text-lg tracking-wide uppercase">
             Policy Focus
-          </div>
+          </motion.div>
 
           {/* SPACE */}
           <div className="h-6" />
 
-          <h2
+          <motion.h2
+            variants={staggerItem}
             className="text-5xl lg:text-6xl font-bold text-[var(--text-primary)] leading-tight"
             style={{ fontFamily: "var(--font-heading)" }}
           >
             Economic <span className="text-[var(--tpp-blue)]">Growth</span>
-          </h2>
+          </motion.h2>
 
           {/* SPACE */}
           <div className="h-10" />
 
-          <p className="text-xl text-[var(--text-secondary)] leading-relaxed">
+          <motion.p variants={staggerItem} className="text-xl text-[var(--text-secondary)] leading-relaxed">
             Sustainable growth pathways designed around Tobago's values, 
             market needs, and eight key capital investment categories.
-          </p>
+          </motion.p>
 
           {/* SPACE */}
           <div className="h-16" />
 
           {/* GDP Targets */}
-          <div className="flex gap-12">
+          <motion.div variants={staggerItem} className="flex gap-12">
             <div>
               <div className="text-sm text-[var(--text-muted)] uppercase tracking-wider">
                 GDP Per Capita 2035
@@ -91,13 +123,13 @@ export default function EconomicGrowthSlide() {
                 $20,000
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* SPACE */}
           <div className="h-16" />
 
           {/* Key initiatives */}
-          <div className="grid grid-cols-2 gap-6">
+          <motion.div variants={staggerItem} className="grid grid-cols-2 gap-6">
             {initiatives.map((item) => (
               <div key={item.title}>
                 <h3 className="text-base font-bold text-[var(--text-primary)]">
@@ -112,10 +144,9 @@ export default function EconomicGrowthSlide() {
                 </p>
               </div>
             ))}
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );
 }
-

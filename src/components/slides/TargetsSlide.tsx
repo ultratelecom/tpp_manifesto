@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function TargetsSlide() {
   const targets = [
@@ -24,6 +25,29 @@ export default function TargetsSlide() {
     },
   ];
 
+  const fadeIn = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 0.6, ease: "easeOut" as const } }
+  };
+
+  const fadeUp = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" as const } }
+  };
+
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.2, delayChildren: 0.2 }
+    }
+  };
+
+  const rowItem = {
+    hidden: { opacity: 0, x: -30 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.5, ease: "easeOut" as const } }
+  };
+
   return (
     <section id="targets" className="slide bg-white relative overflow-hidden">
       {/* Background image - blurred with white overlay */}
@@ -40,25 +64,41 @@ export default function TargetsSlide() {
 
       <div className="relative z-10 flex flex-col items-center justify-center w-full h-full px-20">
         {/* Section title */}
-        <h2
+        <motion.h2
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={fadeUp}
           className="text-5xl lg:text-7xl font-bold text-[var(--text-primary)] text-center"
           style={{ fontFamily: "var(--font-heading)" }}
         >
           Primary Targets
-        </h2>
+        </motion.h2>
 
         {/* SPACE */}
         <div className="h-6" />
 
-        <p className="text-xl lg:text-2xl text-[var(--text-secondary)] text-center">
+        <motion.p
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={fadeIn}
+          className="text-xl lg:text-2xl text-[var(--text-secondary)] text-center"
+        >
           Our commitment to job growth
-        </p>
+        </motion.p>
 
         {/* SPACE */}
         <div className="h-20" />
 
         {/* Year headers */}
-        <div className="w-full max-w-5xl">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={fadeIn}
+          className="w-full max-w-5xl"
+        >
           <div className="grid grid-cols-[1fr_200px_200px] gap-12 items-center">
             <div></div>
             <div className="text-center">
@@ -72,16 +112,23 @@ export default function TargetsSlide() {
               </span>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* SPACE */}
         <div className="h-16" />
 
         {/* Targets */}
-        <div className="w-full max-w-5xl space-y-16">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          variants={staggerContainer}
+          className="w-full max-w-5xl space-y-16"
+        >
           {targets.map((target) => (
-            <div
+            <motion.div
               key={target.sector}
+              variants={rowItem}
               className="grid grid-cols-[1fr_200px_200px] gap-12 items-center"
             >
               {/* Sector name with icon */}
@@ -116,9 +163,9 @@ export default function TargetsSlide() {
                 </span>
                 <div className="text-sm text-[var(--text-muted)] mt-3">increase</div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

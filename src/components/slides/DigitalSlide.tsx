@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function DigitalSlide() {
   const roles = [
@@ -12,38 +13,68 @@ export default function DigitalSlide() {
     "Data Conversion Technicians",
   ];
 
+  const fadeIn = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 0.6, ease: "easeOut" as const } }
+  };
+
+  const slideInRight = {
+    hidden: { opacity: 0, x: 60 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" as const } }
+  };
+
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.15, delayChildren: 0.2 }
+    }
+  };
+
+  const staggerItem = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" as const } }
+  };
+
   return (
     <section id="digital" className="slide bg-white relative">
       <div className="relative z-10 flex flex-col lg:flex-row items-center justify-center gap-20 w-full h-full px-20">
         {/* Left: Content */}
-        <div className="flex-1 max-w-xl">
-          <div className="text-blue-600 font-semibold text-lg tracking-wide uppercase">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={staggerContainer}
+          className="flex-1 max-w-xl"
+        >
+          <motion.div variants={staggerItem} className="text-blue-600 font-semibold text-lg tracking-wide uppercase">
             Digital Transformation
-          </div>
+          </motion.div>
 
           {/* SPACE */}
           <div className="h-6" />
 
-          <h2
+          <motion.h2
+            variants={staggerItem}
             className="text-5xl lg:text-7xl font-bold text-[var(--text-primary)] leading-tight"
             style={{ fontFamily: "var(--font-heading)" }}
           >
             Tobago <span className="text-blue-600">Online</span>
-          </h2>
+          </motion.h2>
 
           {/* SPACE */}
           <div className="h-10" />
 
-          <p className="text-xl text-[var(--text-secondary)] leading-relaxed">
+          <motion.p variants={staggerItem} className="text-xl text-[var(--text-secondary)] leading-relaxed">
             Transitioning the entire Tobago public service, government departments,
             private businesses, and homes from analog to digital operations.
-          </p>
+          </motion.p>
 
           {/* SPACE */}
           <div className="h-16" />
 
           {/* Job count */}
-          <div>
+          <motion.div variants={staggerItem}>
             <div
               className="text-8xl font-bold text-[var(--text-primary)]"
               style={{ fontFamily: "var(--font-heading)" }}
@@ -57,13 +88,13 @@ export default function DigitalSlide() {
             <div className="text-2xl text-[var(--text-primary)] font-medium">
               Digital Jobs Created
             </div>
-          </div>
+          </motion.div>
 
           {/* SPACE */}
           <div className="h-12" />
 
           {/* Roles */}
-          <div>
+          <motion.div variants={staggerItem}>
             <div className="text-sm text-[var(--text-muted)] uppercase tracking-wider">
               Roles Include
             </div>
@@ -74,18 +105,24 @@ export default function DigitalSlide() {
             <div className="text-lg text-[var(--text-secondary)] leading-loose">
               {roles.join(" • ")}
             </div>
-          </div>
+          </motion.div>
 
           {/* SPACE */}
           <div className="h-10" />
 
-          <p className="text-sm text-[var(--text-muted)]">
+          <motion.p variants={staggerItem} className="text-sm text-[var(--text-muted)]">
             Executed by E-IDCOT on behalf of the Office of the Chief Secretary
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
         {/* Right: Large Image */}
-        <div className="flex-shrink-0 relative w-full lg:w-[450px] h-[400px] lg:h-[500px] rounded-3xl overflow-hidden shadow-2xl">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={slideInRight}
+          className="flex-shrink-0 relative w-full lg:w-[450px] h-[400px] lg:h-[500px] rounded-3xl overflow-hidden shadow-2xl"
+        >
           <Image
             src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=900&h=1000&fit=crop"
             alt="Digital technology"
@@ -100,7 +137,7 @@ export default function DigitalSlide() {
               Initiative 02
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

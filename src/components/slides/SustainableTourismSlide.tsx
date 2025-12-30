@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function SustainableTourismSlide() {
   const stats = [
@@ -32,41 +33,91 @@ export default function SustainableTourismSlide() {
     },
   ];
 
+  const fadeIn = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 0.6, ease: "easeOut" as const } }
+  };
+
+  const fadeUp = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" as const } }
+  };
+
+  const scaleUp = {
+    hidden: { opacity: 0, scale: 0.9 },
+    visible: { opacity: 1, scale: 1, transition: { duration: 0.5, ease: "easeOut" as const } }
+  };
+
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.12, delayChildren: 0.2 }
+    }
+  };
+
+  const cardItem = {
+    hidden: { opacity: 0, y: 30, scale: 0.95 },
+    visible: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.5, ease: "easeOut" as const } }
+  };
+
   return (
     <section id="tourism" className="slide bg-white relative">
       <div className="relative z-10 flex flex-col items-center justify-center w-full h-full px-20">
         {/* Section label */}
-        <div className="text-teal-600 font-semibold text-lg tracking-wide uppercase">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={fadeIn}
+          className="text-teal-600 font-semibold text-lg tracking-wide uppercase"
+        >
           Policy Focus
-        </div>
+        </motion.div>
 
         {/* SPACE */}
         <div className="h-6" />
 
         {/* Main heading */}
-        <h2
+        <motion.h2
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={fadeUp}
           className="text-5xl lg:text-7xl font-bold text-[var(--text-primary)] text-center"
           style={{ fontFamily: "var(--font-heading)" }}
         >
           Sustainable <span className="text-teal-600">Tourism</span>
-        </h2>
+        </motion.h2>
 
         {/* SPACE */}
         <div className="h-8" />
 
         {/* Subtitle */}
-        <p className="text-xl lg:text-2xl text-[var(--text-secondary)] text-center max-w-3xl">
+        <motion.p
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={fadeIn}
+          className="text-xl lg:text-2xl text-[var(--text-secondary)] text-center max-w-3xl"
+        >
           Building a world-class destination through community-based, 
           eco-conscious, and culturally rich experiences
-        </p>
+        </motion.p>
 
         {/* SPACE */}
         <div className="h-16" />
 
         {/* Stats */}
-        <div className="flex gap-16 lg:gap-24">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={staggerContainer}
+          className="flex gap-16 lg:gap-24"
+        >
           {stats.map((stat) => (
-            <div key={stat.label} className="text-center">
+            <motion.div key={stat.label} variants={scaleUp} className="text-center">
               <div
                 className="text-5xl lg:text-6xl font-bold text-teal-600"
                 style={{ fontFamily: "var(--font-heading)" }}
@@ -87,17 +138,27 @@ export default function SustainableTourismSlide() {
               <div className="text-sm text-[var(--text-muted)]">
                 {stat.sublabel}
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* SPACE */}
         <div className="h-20" />
 
         {/* Four pillars with images */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 w-full max-w-5xl">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          variants={staggerContainer}
+          className="grid grid-cols-2 lg:grid-cols-4 gap-12 w-full max-w-5xl"
+        >
           {pillars.map((pillar) => (
-            <div key={pillar.title} className="flex flex-col items-center text-center">
+            <motion.div
+              key={pillar.title}
+              variants={cardItem}
+              className="flex flex-col items-center text-center"
+            >
               {/* Square image with rounded corners */}
               <div className="relative w-[140px] h-[140px] rounded-2xl overflow-hidden shadow-lg">
                 <Image
@@ -122,11 +183,10 @@ export default function SustainableTourismSlide() {
               <p className="text-sm text-[var(--text-secondary)]">
                 {pillar.description}
               </p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
 }
-

@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function ConstitutionalAutonomySlide() {
   const pillars = [
@@ -9,6 +10,34 @@ export default function ConstitutionalAutonomySlide() {
     { title: "Revenue Sharing", description: "Fair share of national income" },
     { title: "Participatory Governance", description: "Direct voice in decisions" },
   ];
+
+  const fadeIn = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 0.6, ease: "easeOut" as const } }
+  };
+
+  const fadeUp = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" as const } }
+  };
+
+  const scaleUp = {
+    hidden: { opacity: 0, scale: 0.9 },
+    visible: { opacity: 1, scale: 1, transition: { duration: 0.6, ease: "easeOut" as const } }
+  };
+
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.1, delayChildren: 0.3 }
+    }
+  };
+
+  const pillarItem = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" as const } }
+  };
 
   return (
     <section id="autonomy" className="slide bg-white relative overflow-hidden">
@@ -25,36 +54,58 @@ export default function ConstitutionalAutonomySlide() {
 
       <div className="relative z-10 flex flex-col items-center justify-center w-full h-full px-20">
         {/* Section label */}
-        <div className="text-[var(--tpp-blue)] font-semibold text-lg tracking-wide uppercase">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={fadeIn}
+          className="text-[var(--tpp-blue)] font-semibold text-lg tracking-wide uppercase"
+        >
           Policy Focus
-        </div>
+        </motion.div>
 
         {/* SPACE */}
         <div className="h-6" />
 
         {/* Main heading */}
-        <h2
+        <motion.h2
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={fadeUp}
           className="text-5xl lg:text-7xl font-bold text-[var(--text-primary)] text-center"
           style={{ fontFamily: "var(--font-heading)" }}
         >
           Constitutional <span className="text-[var(--tpp-blue)]">Autonomy</span>
-        </h2>
+        </motion.h2>
 
         {/* SPACE */}
         <div className="h-8" />
 
         {/* Subtitle */}
-        <p className="text-xl lg:text-2xl text-[var(--text-secondary)] text-center max-w-3xl">
+        <motion.p
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={fadeIn}
+          className="text-xl lg:text-2xl text-[var(--text-secondary)] text-center max-w-3xl"
+        >
           Self-governance for Tobago's future — greater control over our own affairs
-        </p>
+        </motion.p>
 
         {/* SPACE */}
         <div className="h-20" />
 
         {/* Timeline */}
-        <div className="flex items-center justify-center gap-8 lg:gap-16">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={staggerContainer}
+          className="flex items-center justify-center gap-8 lg:gap-16"
+        >
           {/* 2026 */}
-          <div className="text-center">
+          <motion.div variants={scaleUp} className="text-center">
             <div
               className="text-6xl lg:text-8xl font-bold text-[var(--tpp-blue)]"
               style={{ fontFamily: "var(--font-heading)" }}
@@ -75,13 +126,21 @@ export default function ConstitutionalAutonomySlide() {
             <div className="text-base text-[var(--text-secondary)]">
               Constitutional Amendment Proclaimed
             </div>
-          </div>
+          </motion.div>
 
           {/* Arrow */}
-          <div className="text-4xl text-[var(--tpp-blue)]">→</div>
+          <motion.div
+            initial={{ opacity: 0, scale: 0 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4, duration: 0.3 }}
+            className="text-4xl text-[var(--tpp-blue)]"
+          >
+            →
+          </motion.div>
 
           {/* 2028 */}
-          <div className="text-center">
+          <motion.div variants={scaleUp} className="text-center">
             <div
               className="text-6xl lg:text-8xl font-bold text-[var(--text-primary)]"
               style={{ fontFamily: "var(--font-heading)" }}
@@ -102,16 +161,26 @@ export default function ConstitutionalAutonomySlide() {
             <div className="text-base text-[var(--text-secondary)]">
               Fully Functional Assembly
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
         {/* SPACE */}
         <div className="h-20" />
 
         {/* Four pillars */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 w-full max-w-5xl">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          variants={staggerContainer}
+          className="grid grid-cols-2 lg:grid-cols-4 gap-12 w-full max-w-5xl"
+        >
           {pillars.map((pillar) => (
-            <div key={pillar.title} className="flex flex-col items-center text-center">
+            <motion.div
+              key={pillar.title}
+              variants={pillarItem}
+              className="flex flex-col items-center text-center"
+            >
               <h3 className="text-lg font-bold text-[var(--tpp-blue)]">
                 {pillar.title}
               </h3>
@@ -122,11 +191,10 @@ export default function ConstitutionalAutonomySlide() {
               <p className="text-sm text-[var(--text-secondary)]">
                 {pillar.description}
               </p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
 }
-
