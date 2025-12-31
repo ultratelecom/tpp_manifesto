@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 export default function PillarsSlide() {
   const pillars = [
     {
-      number: "I",
+      number: "1",
       title: "Development Philosophy",
       image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=400&h=400&fit=crop",
       elements: [
@@ -18,9 +18,11 @@ export default function PillarsSlide() {
       ],
       color: "text-blue-600",
       bgColor: "bg-blue-600",
+      boxBg: "bg-blue-50",
+      boxBorder: "border-blue-200",
     },
     {
-      number: "II",
+      number: "2",
       title: "Social Contract",
       image: "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=400&h=400&fit=crop",
       elements: [
@@ -32,9 +34,11 @@ export default function PillarsSlide() {
       ],
       color: "text-teal-600",
       bgColor: "bg-teal-600",
+      boxBg: "bg-teal-50",
+      boxBorder: "border-teal-200",
     },
     {
-      number: "III",
+      number: "3",
       title: "Strategic Policy Agenda",
       image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=400&fit=crop",
       elements: [
@@ -46,9 +50,11 @@ export default function PillarsSlide() {
       ],
       color: "text-purple-600",
       bgColor: "bg-purple-600",
+      boxBg: "bg-purple-50",
+      boxBorder: "border-purple-200",
     },
     {
-      number: "IV",
+      number: "4",
       title: "Grand Vision & Priorities",
       image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&h=400&fit=crop",
       elements: [
@@ -60,9 +66,11 @@ export default function PillarsSlide() {
       ],
       color: "text-amber-600",
       bgColor: "bg-amber-600",
+      boxBg: "bg-amber-50",
+      boxBorder: "border-amber-200",
     },
     {
-      number: "V",
+      number: "5",
       title: "Implementation Logic",
       image: "https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?w=400&h=400&fit=crop",
       elements: [
@@ -74,6 +82,8 @@ export default function PillarsSlide() {
       ],
       color: "text-emerald-600",
       bgColor: "bg-emerald-600",
+      boxBg: "bg-emerald-50",
+      boxBorder: "border-emerald-200",
     },
   ];
 
@@ -133,7 +143,7 @@ export default function PillarsSlide() {
           variants={fadeIn}
           className="text-xl lg:text-2xl text-[var(--tpp-blue)] font-semibold text-center"
         >
-          A Pathway to Economic Growth and Prosperity
+          A Pathway to Economic Growth and Prosperity for All
         </motion.p>
 
         {/* SPACE */}
@@ -159,7 +169,7 @@ export default function PillarsSlide() {
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
           variants={staggerContainer}
-          className="grid grid-cols-5 gap-8 w-full max-w-7xl"
+          className="grid grid-cols-5 gap-6 w-full max-w-7xl"
         >
           {pillars.map((pillar) => (
             <motion.div
@@ -207,23 +217,19 @@ export default function PillarsSlide() {
               {/* SPACE */}
               <div className="h-3" />
 
-              {/* Divider */}
-              <div className={`w-10 h-1 rounded-full bg-current ${pillar.color}`} />
-
-              {/* SPACE */}
-              <div className="h-3" />
-
-              {/* Key elements */}
-              <ul className="space-y-1">
-                {pillar.elements.map((element, idx) => (
-                  <li
-                    key={idx}
-                    className="text-[11px] text-[var(--text-secondary)] leading-snug"
-                  >
-                    {element}
-                  </li>
-                ))}
-              </ul>
+              {/* Key elements in colored box */}
+              <div className={`${pillar.boxBg} ${pillar.boxBorder} border rounded-xl px-4 py-3 w-full`}>
+                <ul className="space-y-1">
+                  {pillar.elements.map((element, idx) => (
+                    <li
+                      key={idx}
+                      className={`text-[11px] ${pillar.color} leading-snug font-medium`}
+                    >
+                      {element}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </motion.div>
           ))}
         </motion.div>
