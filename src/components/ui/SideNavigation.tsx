@@ -12,16 +12,31 @@ export default function SideNavigation({ totalSlides, slideIds }: SideNavigation
   const [activeSlide, setActiveSlide] = useState(0);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      const windowHeight = window.innerHeight;
-      const currentSlide = Math.round(scrollPosition / windowHeight);
-      setActiveSlide(Math.min(currentSlide, totalSlides - 1));
-    };
+    // Use Intersection Observer for reliable slide detection
+    const observers: IntersectionObserver[] = [];
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [totalSlides]);
+    slideIds.forEach((id, index) => {
+      const element = document.getElementById(id);
+      if (element) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
+                setActiveSlide(index);
+              }
+            });
+          },
+          { threshold: 0.5 }
+        );
+        observer.observe(element);
+        observers.push(observer);
+      }
+    });
+
+    return () => {
+      observers.forEach((observer) => observer.disconnect());
+    };
+  }, [slideIds]);
 
   const scrollToSlide = (index: number) => {
     const element = document.getElementById(slideIds[index]);
@@ -45,4 +60,3 @@ export default function SideNavigation({ totalSlides, slideIds }: SideNavigation
     </nav>
   );
 }
-
