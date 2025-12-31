@@ -14,22 +14,38 @@ export default function SustainableTourismSlide() {
     {
       image: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=400&h=400&fit=crop",
       title: "Infrastructure",
-      description: "World-class amenities",
+      items: [
+        "Pigeon Point Heritage Park",
+        "Store Bay Beach Facility",
+      ],
     },
     {
       image: "https://images.unsplash.com/photo-1582719508461-905c673771fd?w=400&h=400&fit=crop",
       title: "Luxury Hotels",
-      description: "Premium accommodations",
+      items: [
+        "Marriott Resort",
+        "Hilton International",
+        "Dollar Tree Resort",
+      ],
     },
     {
       image: "https://images.unsplash.com/photo-1528543606781-2f6e6857f318?w=400&h=400&fit=crop",
       title: "Community Tourism",
-      description: "Authentic experiences",
+      items: [
+        "Buccoo Beach Facility",
+        "Delaford Beach Facility",
+        "Louis D'Or Beach Facility",
+        "Grange Beach Facility",
+      ],
     },
     {
       image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&h=400&fit=crop",
       title: "Eco-Tourism",
-      description: "Nature trails & heritage",
+      items: [
+        "Roxborough nature trail",
+        "Kings Bay Waterfall",
+        "Argyle Waterfall",
+      ],
     },
   ];
 
@@ -63,7 +79,7 @@ export default function SustainableTourismSlide() {
 
   return (
     <section id="tourism" className="slide bg-white relative">
-      <div className="relative z-10 flex flex-col items-center justify-center w-full h-full px-20">
+      <div className="relative z-10 flex flex-col items-center justify-center w-full h-full px-16 py-12">
         {/* Section label */}
         <motion.div
           initial="hidden"
@@ -76,7 +92,7 @@ export default function SustainableTourismSlide() {
         </motion.div>
 
         {/* SPACE */}
-        <div className="h-6" />
+        <div className="h-4" />
 
         {/* Main heading */}
         <motion.h2
@@ -84,14 +100,14 @@ export default function SustainableTourismSlide() {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={fadeUp}
-          className="text-5xl lg:text-7xl font-bold text-[var(--text-primary)] text-center"
+          className="text-4xl lg:text-6xl font-bold text-[var(--text-primary)] text-center"
           style={{ fontFamily: "var(--font-heading)" }}
         >
           Sustainable <span className="text-teal-600">Tourism</span>
         </motion.h2>
 
         {/* SPACE */}
-        <div className="h-8" />
+        <div className="h-6" />
 
         {/* Subtitle */}
         <motion.p
@@ -99,14 +115,28 @@ export default function SustainableTourismSlide() {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={fadeIn}
-          className="text-xl lg:text-2xl text-[var(--text-secondary)] text-center max-w-3xl"
+          className="text-lg text-[var(--text-secondary)] text-center max-w-3xl"
         >
           Building a world-class destination through community-based, 
           eco-conscious, and culturally rich experiences
         </motion.p>
 
         {/* SPACE */}
-        <div className="h-16" />
+        <div className="h-3" />
+
+        {/* GDP Target */}
+        <motion.p
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={fadeIn}
+          className="text-base font-semibold text-teal-600 text-center"
+        >
+          Increase the contribution of tourism to at least 6% of GDP by 2030 and at least 8% by 2035
+        </motion.p>
+
+        {/* SPACE */}
+        <div className="h-10" />
 
         {/* Stats */}
         <motion.div
@@ -114,28 +144,28 @@ export default function SustainableTourismSlide() {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={staggerContainer}
-          className="flex gap-16 lg:gap-24"
+          className="flex gap-12 lg:gap-20"
         >
           {stats.map((stat) => (
             <motion.div key={stat.label} variants={scaleUp} className="text-center">
               <div
-                className="text-5xl lg:text-6xl font-bold text-teal-600"
+                className="text-4xl lg:text-5xl font-bold text-teal-600"
                 style={{ fontFamily: "var(--font-heading)" }}
               >
                 {stat.value}
               </div>
               
               {/* SPACE */}
-              <div className="h-3" />
+              <div className="h-2" />
               
-              <div className="text-lg font-semibold text-[var(--text-primary)]">
+              <div className="text-base font-semibold text-[var(--text-primary)]">
                 {stat.label}
               </div>
               
               {/* SPACE */}
               <div className="h-1" />
               
-              <div className="text-sm text-[var(--text-muted)]">
+              <div className="text-xs text-[var(--text-muted)]">
                 {stat.sublabel}
               </div>
             </motion.div>
@@ -143,24 +173,24 @@ export default function SustainableTourismSlide() {
         </motion.div>
 
         {/* SPACE */}
-        <div className="h-20" />
+        <div className="h-12" />
 
-        {/* Four pillars with images */}
+        {/* Four pillars with images and bullet points */}
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
           variants={staggerContainer}
-          className="grid grid-cols-2 lg:grid-cols-4 gap-12 w-full max-w-5xl"
+          className="grid grid-cols-2 lg:grid-cols-4 gap-8 w-full max-w-6xl"
         >
           {pillars.map((pillar) => (
             <motion.div
               key={pillar.title}
               variants={cardItem}
-              className="flex flex-col items-center text-center"
+              className="flex flex-col items-center"
             >
               {/* Square image with rounded corners */}
-              <div className="relative w-[140px] h-[140px] rounded-2xl overflow-hidden shadow-lg">
+              <div className="relative w-[110px] h-[110px] rounded-2xl overflow-hidden shadow-lg">
                 <Image
                   src={pillar.image}
                   alt={pillar.title}
@@ -171,18 +201,27 @@ export default function SustainableTourismSlide() {
               </div>
               
               {/* SPACE */}
-              <div className="h-6" />
+              <div className="h-4" />
               
-              <h3 className="text-lg font-bold text-[var(--text-primary)]">
+              <h3 className="text-base font-bold text-[var(--text-primary)] text-center">
                 {pillar.title}
               </h3>
               
               {/* SPACE */}
-              <div className="h-2" />
+              <div className="h-3" />
               
-              <p className="text-sm text-[var(--text-secondary)]">
-                {pillar.description}
-              </p>
+              {/* Bullet points */}
+              <ul className="space-y-1 text-left w-full">
+                {pillar.items.map((item, idx) => (
+                  <li
+                    key={idx}
+                    className="text-xs text-[var(--text-secondary)] leading-relaxed flex items-start gap-2"
+                  >
+                    <span className="text-teal-600 mt-0.5">•</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
             </motion.div>
           ))}
         </motion.div>
