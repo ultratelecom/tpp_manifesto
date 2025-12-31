@@ -1,6 +1,7 @@
 "use client";
 
 import HeroSlide from "@/components/slides/HeroSlide";
+import PillarsSlide from "@/components/slides/PillarsSlide";
 import DefinitionSlide from "@/components/slides/DefinitionSlide";
 import ImpactSlide from "@/components/slides/ImpactSlide";
 import TargetsSlide from "@/components/slides/TargetsSlide";
@@ -21,6 +22,7 @@ import ScrollProgress from "@/components/ui/ScrollProgress";
 
 const slideIds = [
   "hero",
+  "pillars",
   "definition",
   "impact",
   "targets",
@@ -47,8 +49,11 @@ export default function Home() {
       {/* Side navigation dots */}
       <SideNavigation totalSlides={slideIds.length} slideIds={slideIds} />
 
-      {/* Slides - Sustainable Job Creation Section */}
+      {/* Opening */}
       <HeroSlide />
+      <PillarsSlide />
+
+      {/* Slides - Sustainable Job Creation Section */}
       <DefinitionSlide />
       <ImpactSlide />
       <TargetsSlide />
