@@ -132,7 +132,7 @@ export default function SustainableTourismSlide() {
           variants={fadeIn}
           className="text-base font-semibold text-teal-600 text-center"
         >
-          Increase the contribution of tourism to at least 6% of GDP by 2030 and at least 8% by 2035
+          Increase the contribution of tourism to 6% of GDP by 2030 and 8% of GDP by 2035
         </motion.p>
 
         {/* SPACE */}
