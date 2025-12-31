@@ -218,14 +218,15 @@ export default function PillarsSlide() {
               <div className="h-3" />
 
               {/* Key elements in colored box */}
-              <div className={`${pillar.boxBg} ${pillar.boxBorder} border rounded-xl px-5 py-4 w-full`}>
-                <ul className="space-y-2">
+              <div className={`${pillar.boxBg} ${pillar.boxBorder} border rounded-xl px-4 py-3 w-full`}>
+                <ul className="space-y-1 text-left">
                   {pillar.elements.map((element, idx) => (
                     <li
                       key={idx}
-                      className={`text-sm ${pillar.color} leading-snug font-medium`}
+                      className={`text-xs ${pillar.color} leading-relaxed font-medium flex items-start gap-2`}
                     >
-                      {element}
+                      <span className="opacity-60">•</span>
+                      <span>{element}</span>
                     </li>
                   ))}
                 </ul>
