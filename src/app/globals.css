@@ -26,7 +26,7 @@
 }
 
 html {
-  scroll-snap-type: y proximity;
+  scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
 }
 
@@ -40,14 +40,17 @@ body {
 /* Slide container */
 .slide {
   min-height: 100vh;
+  height: 100vh;
   width: 100%;
   scroll-snap-align: start;
+  scroll-snap-stop: always;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
   padding: 100px 120px;
+  overflow: hidden;
 }
 
 @media (max-width: 1200px) {
