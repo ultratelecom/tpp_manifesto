@@ -7,31 +7,44 @@ export default function PublicInfrastructureSlide() {
   const initiatives = [
     {
       image: "https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?w=400&h=400&fit=crop",
-      title: "Transportation",
-      description: "Roads, bypasses, connectors",
+      title: "Road Network",
+      items: [
+        "Overpass from Highmoor Connector to Sangster Hill Road",
+        "Runnemede Bypass along Des Vignes",
+        "Darrel Spring Boardwalk",
+        "Milford Court–Pigeon Point Connector",
+      ],
     },
     {
       image: "https://images.unsplash.com/photo-1570125909232-eb263c188f7e?w=400&h=400&fit=crop",
       title: "Transit Hubs",
-      description: "Scarborough, Mason Hall, Roxborough",
+      items: [
+        "Central Transportation Hub",
+        "Northern Transit Hub in Mason Hall",
+        "Eastern Transit Hub in Roxborough",
+      ],
     },
     {
       image: "https://images.unsplash.com/photo-1605281317010-fe5ffe798166?w=400&h=400&fit=crop",
-      title: "Maritime",
-      description: "Cruise terminal, marina",
+      title: "Marine Infrastructure",
+      items: [
+        "Cruise ship complex at Scarborough",
+        "Cruise ship terminal at Charlotteville",
+        "Cruise ship terminal at Plymouth",
+        "Mariner at Kings Bay",
+        "Mariner at Cove",
+      ],
     },
     {
       image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=400&h=400&fit=crop",
-      title: "Urban Growth",
-      description: "City of Scarborough expansion",
+      title: "Urban, Suburban & Village Growth",
+      items: [
+        "Multi-Level Parkade in Scarborough",
+        "Friendship Estate (Sport Tourism)",
+        "Commercial Centres: Scarborough, Roxborough, Canaan/Bon Accord",
+        "Suburban centres: Charlotteville, Speyside, Plymouth, Mason Hall",
+      ],
     },
-  ];
-
-  const projects = [
-    "Cruise Ship Terminal",
-    "Marina & Maritime Entryway",
-    "Multi-Level Parkade",
-    "Transit Hub & Commercial Centre",
   ];
 
   const fadeIn = {
@@ -64,7 +77,7 @@ export default function PublicInfrastructureSlide() {
 
   return (
     <section id="public-infrastructure" className="slide bg-white relative">
-      <div className="relative z-10 flex flex-col items-center justify-center w-full h-full px-20">
+      <div className="relative z-10 flex flex-col items-center justify-center w-full h-full px-16 py-12">
         {/* Section label */}
         <motion.div
           initial="hidden"
@@ -77,7 +90,7 @@ export default function PublicInfrastructureSlide() {
         </motion.div>
 
         {/* SPACE */}
-        <div className="h-6" />
+        <div className="h-4" />
 
         {/* Main heading */}
         <motion.h2
@@ -85,14 +98,14 @@ export default function PublicInfrastructureSlide() {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={fadeUp}
-          className="text-5xl lg:text-7xl font-bold text-[var(--text-primary)] text-center"
+          className="text-4xl lg:text-6xl font-bold text-[var(--text-primary)] text-center"
           style={{ fontFamily: "var(--font-heading)" }}
         >
           Public <span className="text-orange-600">Infrastructure</span>
         </motion.h2>
 
         {/* SPACE */}
-        <div className="h-8" />
+        <div className="h-6" />
 
         {/* Investment headline */}
         <motion.div
@@ -103,39 +116,39 @@ export default function PublicInfrastructureSlide() {
           className="text-center"
         >
           <div
-            className="text-6xl lg:text-7xl font-bold text-orange-600"
+            className="text-5xl lg:text-6xl font-bold text-orange-600"
             style={{ fontFamily: "var(--font-heading)" }}
           >
             30% GDP
           </div>
           
           {/* SPACE */}
-          <div className="h-4" />
+          <div className="h-2" />
           
-          <div className="text-xl text-[var(--text-secondary)]">
+          <div className="text-lg text-[var(--text-secondary)]">
             Annual Investment • 2026-2045
           </div>
         </motion.div>
 
         {/* SPACE */}
-        <div className="h-16" />
+        <div className="h-10" />
 
-        {/* Four initiatives with images */}
+        {/* Four initiatives with images and bullet points */}
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
           variants={staggerContainer}
-          className="grid grid-cols-2 lg:grid-cols-4 gap-12 w-full max-w-5xl"
+          className="grid grid-cols-2 lg:grid-cols-4 gap-8 w-full max-w-7xl"
         >
           {initiatives.map((item) => (
             <motion.div
               key={item.title}
               variants={cardItem}
-              className="flex flex-col items-center text-center"
+              className="flex flex-col items-center"
             >
               {/* Square image with rounded corners */}
-              <div className="relative w-[150px] h-[150px] rounded-2xl overflow-hidden shadow-lg">
+              <div className="relative w-[120px] h-[120px] rounded-2xl overflow-hidden shadow-lg">
                 <Image
                   src={item.image}
                   alt={item.title}
@@ -146,44 +159,29 @@ export default function PublicInfrastructureSlide() {
               </div>
               
               {/* SPACE */}
-              <div className="h-6" />
+              <div className="h-5" />
               
-              <h3 className="text-lg font-bold text-[var(--text-primary)]">
+              <h3 className="text-base font-bold text-[var(--text-primary)] text-center">
                 {item.title}
               </h3>
               
               {/* SPACE */}
-              <div className="h-2" />
+              <div className="h-3" />
               
-              <p className="text-sm text-[var(--text-secondary)]">
-                {item.description}
-              </p>
+              {/* Bullet points */}
+              <ul className="space-y-1 text-left w-full">
+                {item.items.map((point, idx) => (
+                  <li
+                    key={idx}
+                    className="text-xs text-[var(--text-secondary)] leading-relaxed flex items-start gap-2"
+                  >
+                    <span className="text-orange-600 mt-0.5">•</span>
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
             </motion.div>
           ))}
-        </motion.div>
-
-        {/* SPACE */}
-        <div className="h-16" />
-
-        {/* Major PPP projects */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-          variants={fadeIn}
-          className="text-center"
-        >
-          <div className="text-sm text-[var(--text-muted)] uppercase tracking-wider mb-4">
-            Major PPP Projects
-          </div>
-          
-          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
-            {projects.map((proj) => (
-              <span key={proj} className="text-base font-medium text-[var(--text-primary)]">
-                {proj}
-              </span>
-            ))}
-          </div>
         </motion.div>
       </div>
     </section>
