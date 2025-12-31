@@ -51,17 +51,6 @@ export default function HeroSlide() {
           <span className="text-[var(--tpp-blue)]">For Tobago</span>
         </motion.h1>
 
-        {/* Subtitle */}
-        <motion.p
-          initial="hidden"
-          animate="visible"
-          variants={fadeIn}
-          transition={{ delay: 0.4 }}
-          className="body-lg max-w-xl mb-8"
-        >
-          Sustainable & Meaningful Job Creation
-        </motion.p>
-
         {/* Party name */}
         <motion.p
           initial="hidden"
