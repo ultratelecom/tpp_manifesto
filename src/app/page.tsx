@@ -4,7 +4,6 @@ import HeroSlide from "@/components/slides/HeroSlide";
 import PillarsSlide from "@/components/slides/PillarsSlide";
 import DefinitionSlide from "@/components/slides/DefinitionSlide";
 import ImpactSlide from "@/components/slides/ImpactSlide";
-import TargetsSlide from "@/components/slides/TargetsSlide";
 import CleanEnergySlide from "@/components/slides/CleanEnergySlide";
 import DigitalSlide from "@/components/slides/DigitalSlide";
 import InfrastructureSlide from "@/components/slides/InfrastructureSlide";
@@ -25,7 +24,6 @@ const slideIds = [
   "pillars",
   "definition",
   "impact",
-  "targets",
   "clean-energy",
   "digital",
   "infrastructure",
@@ -56,7 +54,6 @@ export default function Home() {
       {/* Slides - Sustainable Job Creation Section */}
       <DefinitionSlide />
       <ImpactSlide />
-      <TargetsSlide />
       <CleanEnergySlide />
       <DigitalSlide />
       <InfrastructureSlide />
