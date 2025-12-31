@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { motion } from "framer-motion";
 
 interface SideNavigationProps {
@@ -10,6 +10,37 @@ interface SideNavigationProps {
 
 export default function SideNavigation({ totalSlides, slideIds }: SideNavigationProps) {
   const [activeSlide, setActiveSlide] = useState(0);
+
+  const scrollToSlide = useCallback((index: number) => {
+    const clampedIndex = Math.max(0, Math.min(index, totalSlides - 1));
+    const element = document.getElementById(slideIds[clampedIndex]);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+      setActiveSlide(clampedIndex);
+    }
+  }, [slideIds, totalSlides]);
+
+  useEffect(() => {
+    // Keyboard navigation
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "ArrowDown" || e.key === "PageDown" || e.key === " ") {
+        e.preventDefault();
+        scrollToSlide(activeSlide + 1);
+      } else if (e.key === "ArrowUp" || e.key === "PageUp") {
+        e.preventDefault();
+        scrollToSlide(activeSlide - 1);
+      } else if (e.key === "Home") {
+        e.preventDefault();
+        scrollToSlide(0);
+      } else if (e.key === "End") {
+        e.preventDefault();
+        scrollToSlide(totalSlides - 1);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [activeSlide, scrollToSlide, totalSlides]);
 
   useEffect(() => {
     // Use Intersection Observer for reliable slide detection
@@ -37,13 +68,6 @@ export default function SideNavigation({ totalSlides, slideIds }: SideNavigation
       observers.forEach((observer) => observer.disconnect());
     };
   }, [slideIds]);
-
-  const scrollToSlide = (index: number) => {
-    const element = document.getElementById(slideIds[index]);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
 
   return (
     <nav className="side-nav">
