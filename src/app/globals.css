@@ -26,9 +26,7 @@
 }
 
 html {
-  scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
-  overflow-y: scroll;
 }
 
 body {
@@ -36,6 +34,15 @@ body {
   background: var(--bg-primary);
   color: var(--text-primary);
   overflow-x: hidden;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  height: 100vh;
+}
+
+/* Snap container */
+.snap-container {
+  display: flex;
+  flex-direction: column;
 }
 
 /* Slide container */
@@ -44,6 +51,7 @@ body {
   height: 100vh;
   width: 100%;
   scroll-snap-align: start;
+  scroll-margin-top: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -51,6 +59,7 @@ body {
   position: relative;
   padding: 100px 120px;
   overflow: hidden;
+  flex-shrink: 0;
 }
 
 @media (max-width: 1200px) {

@@ -40,7 +40,7 @@ const slideIds = [
 
 export default function Home() {
   return (
-    <main className="relative">
+    <main className="relative snap-container">
       {/* Progress bar */}
       <ScrollProgress />
 
