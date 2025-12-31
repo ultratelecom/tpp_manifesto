@@ -74,55 +74,6 @@ export default function ClosingSlide() {
         </motion.p>
 
         {/* SPACE */}
-        <div className="h-20" />
-
-        {/* Key stats */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-          variants={staggerContainer}
-          className="flex items-center gap-20"
-        >
-          <motion.div variants={statItem} className="text-center">
-            <div
-              className="text-7xl font-bold text-[var(--tpp-blue)]"
-              style={{ fontFamily: "var(--font-heading)" }}
-            >
-              4,875+
-            </div>
-            <div className="h-4" />
-            <div className="text-xl text-[var(--text-secondary)]">Jobs Created</div>
-          </motion.div>
-          
-          <motion.div variants={statItem} className="w-px h-24 bg-gray-200" />
-          
-          <motion.div variants={statItem} className="text-center">
-            <div
-              className="text-7xl font-bold text-[var(--tpp-blue)]"
-              style={{ fontFamily: "var(--font-heading)" }}
-            >
-              3
-            </div>
-            <div className="h-4" />
-            <div className="text-xl text-[var(--text-secondary)]">Key Sectors</div>
-          </motion.div>
-          
-          <motion.div variants={statItem} className="w-px h-24 bg-gray-200" />
-          
-          <motion.div variants={statItem} className="text-center">
-            <div
-              className="text-7xl font-bold text-[var(--tpp-blue)]"
-              style={{ fontFamily: "var(--font-heading)" }}
-            >
-              2045
-            </div>
-            <div className="h-4" />
-            <div className="text-xl text-[var(--text-secondary)]">Vision Year</div>
-          </motion.div>
-        </motion.div>
-
-        {/* SPACE */}
         <div className="h-16" />
 
         {/* Party footer */}
