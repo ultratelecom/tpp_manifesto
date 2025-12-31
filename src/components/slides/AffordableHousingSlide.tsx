@@ -7,23 +7,31 @@ export default function AffordableHousingSlide() {
   const programmes = [
     {
       image: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=400&h=400&fit=crop",
-      title: "Housing Trust",
-      description: "Tobago Housing & Land Trust",
+      title: "Dwelling Units",
+      subtitle: "800-Units",
+      items: ["Riseland, Adventure, Bacolet, Shirvan"],
     },
     {
       image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=400&h=400&fit=crop",
       title: "Land for Landless",
+      subtitle: "200-Lots",
       description: "Fully developed service lots",
+      items: [
+        "Adelphi, Courland, Belle Garden",
+        "Louis D'Or, Blenheim",
+      ],
     },
     {
       image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=400&fit=crop",
       title: "Modular Housing",
-      description: "Low-cost homeownership",
+      subtitle: null,
+      items: ["Low-cost homeownership"],
     },
     {
       image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&h=400&fit=crop",
       title: "HOME Programme",
-      description: "Home Ownership Made Easy",
+      subtitle: null,
+      items: ["Home Ownership Made Easy"],
     },
   ];
 
@@ -57,7 +65,7 @@ export default function AffordableHousingSlide() {
 
   return (
     <section id="housing" className="slide bg-white relative">
-      <div className="relative z-10 flex flex-col items-center justify-center w-full h-full px-20">
+      <div className="relative z-10 flex flex-col items-center justify-center w-full h-full px-16 py-12">
         {/* Section label */}
         <motion.div
           initial="hidden"
@@ -70,7 +78,7 @@ export default function AffordableHousingSlide() {
         </motion.div>
 
         {/* SPACE */}
-        <div className="h-6" />
+        <div className="h-4" />
 
         {/* Main heading */}
         <motion.h2
@@ -78,14 +86,14 @@ export default function AffordableHousingSlide() {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={fadeUp}
-          className="text-5xl lg:text-7xl font-bold text-[var(--text-primary)] text-center"
+          className="text-4xl lg:text-6xl font-bold text-[var(--text-primary)] text-center"
           style={{ fontFamily: "var(--font-heading)" }}
         >
           Affordable <span className="text-rose-600">Housing</span>
         </motion.h2>
 
         {/* SPACE */}
-        <div className="h-8" />
+        <div className="h-6" />
 
         {/* Subtitle */}
         <motion.p
@@ -93,14 +101,14 @@ export default function AffordableHousingSlide() {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={fadeIn}
-          className="text-xl lg:text-2xl text-[var(--text-secondary)] text-center max-w-3xl"
+          className="text-lg text-[var(--text-secondary)] text-center max-w-3xl"
         >
           A home for every Tobagonian — ensuring access to housing 
           that addresses current and future needs
         </motion.p>
 
         {/* SPACE */}
-        <div className="h-12" />
+        <div className="h-10" />
 
         {/* Investment & Coverage stats */}
         <motion.div
@@ -108,57 +116,57 @@ export default function AffordableHousingSlide() {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={staggerContainer}
-          className="flex gap-16 lg:gap-24"
+          className="flex gap-12 lg:gap-20"
         >
           <motion.div variants={scaleUp} className="text-center">
             <div
-              className="text-6xl lg:text-7xl font-bold text-rose-600"
+              className="text-5xl lg:text-6xl font-bold text-rose-600"
               style={{ fontFamily: "var(--font-heading)" }}
             >
               15%
             </div>
             
             {/* SPACE */}
-            <div className="h-3" />
+            <div className="h-2" />
             
-            <div className="text-lg font-semibold text-[var(--text-primary)]">
+            <div className="text-base font-semibold text-[var(--text-primary)]">
               GDP Investment
             </div>
             
             {/* SPACE */}
             <div className="h-1" />
             
-            <div className="text-sm text-[var(--text-muted)]">
+            <div className="text-xs text-[var(--text-muted)]">
               Annual 2026-2045
             </div>
           </motion.div>
 
           <motion.div variants={scaleUp} className="text-center">
             <div
-              className="text-6xl lg:text-7xl font-bold text-[var(--text-primary)]"
+              className="text-5xl lg:text-6xl font-bold text-[var(--text-primary)]"
               style={{ fontFamily: "var(--font-heading)" }}
             >
               75%
             </div>
             
             {/* SPACE */}
-            <div className="h-3" />
+            <div className="h-2" />
             
-            <div className="text-lg font-semibold text-[var(--text-primary)]">
+            <div className="text-base font-semibold text-[var(--text-primary)]">
               Coverage by 2045
             </div>
             
             {/* SPACE */}
             <div className="h-1" />
             
-            <div className="text-sm text-[var(--text-muted)]">
+            <div className="text-xs text-[var(--text-muted)]">
               Eligible households
             </div>
           </motion.div>
         </motion.div>
 
         {/* SPACE */}
-        <div className="h-20" />
+        <div className="h-12" />
 
         {/* Four programmes with images */}
         <motion.div
@@ -166,16 +174,16 @@ export default function AffordableHousingSlide() {
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
           variants={staggerContainer}
-          className="grid grid-cols-2 lg:grid-cols-4 gap-12 w-full max-w-5xl"
+          className="grid grid-cols-2 lg:grid-cols-4 gap-8 w-full max-w-6xl"
         >
           {programmes.map((prog) => (
             <motion.div
               key={prog.title}
               variants={cardItem}
-              className="flex flex-col items-center text-center"
+              className="flex flex-col items-center"
             >
               {/* Square image with rounded corners */}
-              <div className="relative w-[150px] h-[150px] rounded-2xl overflow-hidden shadow-lg">
+              <div className="relative w-[110px] h-[110px] rounded-2xl overflow-hidden shadow-lg">
                 <Image
                   src={prog.image}
                   alt={prog.title}
@@ -186,18 +194,37 @@ export default function AffordableHousingSlide() {
               </div>
               
               {/* SPACE */}
-              <div className="h-6" />
+              <div className="h-4" />
               
-              <h3 className="text-lg font-bold text-[var(--text-primary)]">
+              <h3 className="text-base font-bold text-[var(--text-primary)] text-center">
                 {prog.title}
               </h3>
               
-              {/* SPACE */}
-              <div className="h-2" />
+              {/* Subtitle if exists */}
+              {prog.subtitle && (
+                <>
+                  <div className="h-1" />
+                  <div className="text-sm font-semibold text-rose-600">
+                    {prog.subtitle}
+                  </div>
+                </>
+              )}
               
-              <p className="text-sm text-[var(--text-secondary)]">
-                {prog.description}
-              </p>
+              {/* SPACE */}
+              <div className="h-3" />
+              
+              {/* Bullet points */}
+              <ul className="space-y-1 text-left w-full">
+                {prog.items.map((item, idx) => (
+                  <li
+                    key={idx}
+                    className="text-xs text-[var(--text-secondary)] leading-relaxed flex items-start gap-2"
+                  >
+                    <span className="text-rose-600 mt-0.5">•</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
             </motion.div>
           ))}
         </motion.div>
