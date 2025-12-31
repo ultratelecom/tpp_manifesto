@@ -119,7 +119,7 @@ export default function PublicInfrastructureSlide() {
             className="text-5xl lg:text-6xl font-bold text-orange-600"
             style={{ fontFamily: "var(--font-heading)" }}
           >
-            30% GDP
+            $600 Million+
           </div>
           
           {/* SPACE */}
