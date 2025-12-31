@@ -25,7 +25,17 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+}
+
 html {
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
 }
 
@@ -33,33 +43,29 @@ body {
   font-family: var(--font-body);
   background: var(--bg-primary);
   color: var(--text-primary);
-  overflow-x: hidden;
-  overflow-y: scroll;
-  scroll-snap-type: y mandatory;
-  height: 100vh;
 }
 
 /* Snap container */
 .snap-container {
-  display: flex;
-  flex-direction: column;
+  display: block;
 }
 
 /* Slide container */
 .slide {
   min-height: 100vh;
+  min-height: 100dvh;
   height: 100vh;
+  height: 100dvh;
   width: 100%;
   scroll-snap-align: start;
-  scroll-margin-top: 0;
+  scroll-snap-stop: always;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
-  padding: 100px 120px;
+  padding: 80px 100px;
   overflow: hidden;
-  flex-shrink: 0;
 }
 
 @media (max-width: 1200px) {
