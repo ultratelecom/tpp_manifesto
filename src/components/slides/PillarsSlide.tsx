@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 export default function PillarsSlide() {
@@ -7,6 +8,7 @@ export default function PillarsSlide() {
     {
       number: "I",
       title: "Development Philosophy",
+      image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=400&h=400&fit=crop",
       elements: [
         "Human-centred development",
         "Sustainable growth",
@@ -15,10 +17,12 @@ export default function PillarsSlide() {
         "Cultural preservation",
       ],
       color: "text-blue-600",
+      bgColor: "bg-blue-600",
     },
     {
       number: "II",
       title: "Social Contract",
+      image: "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=400&h=400&fit=crop",
       elements: [
         "Transparency & accountability",
         "Citizen engagement",
@@ -27,10 +31,12 @@ export default function PillarsSlide() {
         "Community collaboration",
       ],
       color: "text-teal-600",
+      bgColor: "bg-teal-600",
     },
     {
       number: "III",
       title: "Strategic Policy Agenda",
+      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=400&fit=crop",
       elements: [
         "5 Strategic Focus Areas",
         "Evidence-based policy",
@@ -39,10 +45,12 @@ export default function PillarsSlide() {
         "National & international alignment",
       ],
       color: "text-purple-600",
+      bgColor: "bg-purple-600",
     },
     {
       number: "IV",
       title: "Grand Vision & Priorities",
+      image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=400&h=400&fit=crop",
       elements: [
         "21 Development Priorities",
         "22 Performance Benchmarks",
@@ -51,10 +59,12 @@ export default function PillarsSlide() {
         "Regional development goals",
       ],
       color: "text-amber-600",
+      bgColor: "bg-amber-600",
     },
     {
       number: "V",
       title: "Implementation Logic",
+      image: "https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?w=400&h=400&fit=crop",
       elements: [
         "Pre-Planning & Governance",
         "Core Planning & Goals",
@@ -63,6 +73,7 @@ export default function PillarsSlide() {
         "Continuous improvement",
       ],
       color: "text-emerald-600",
+      bgColor: "bg-emerald-600",
     },
   ];
 
@@ -89,12 +100,17 @@ export default function PillarsSlide() {
     visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" as const } }
   };
 
+  const imageScale = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: { opacity: 1, scale: 1, transition: { duration: 0.6, ease: "easeOut" as const } }
+  };
+
   return (
     <section id="pillars" className="slide bg-white relative overflow-hidden">
       {/* Subtle background pattern */}
       <div className="absolute inset-0 bg-grid opacity-20" />
 
-      <div className="relative z-10 flex flex-col items-center justify-center w-full h-full px-12 py-16">
+      <div className="relative z-10 flex flex-col items-center justify-center w-full h-full px-12 py-12">
         {/* Main title */}
         <motion.h2
           initial="hidden"
@@ -108,7 +124,7 @@ export default function PillarsSlide() {
         </motion.h2>
 
         {/* SPACE */}
-        <div className="h-4" />
+        <div className="h-3" />
 
         <motion.p
           initial="hidden"
@@ -121,7 +137,7 @@ export default function PillarsSlide() {
         </motion.p>
 
         {/* SPACE */}
-        <div className="h-12" />
+        <div className="h-8" />
 
         {/* Subtitle */}
         <motion.p
@@ -135,7 +151,7 @@ export default function PillarsSlide() {
         </motion.p>
 
         {/* SPACE */}
-        <div className="h-16" />
+        <div className="h-12" />
 
         {/* Five Pillars */}
         <motion.div
@@ -143,7 +159,7 @@ export default function PillarsSlide() {
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
           variants={staggerContainer}
-          className="grid grid-cols-5 gap-6 w-full max-w-7xl"
+          className="grid grid-cols-5 gap-8 w-full max-w-7xl"
         >
           {pillars.map((pillar) => (
             <motion.div
@@ -151,40 +167,58 @@ export default function PillarsSlide() {
               variants={pillarItem}
               className="flex flex-col items-center text-center"
             >
+              {/* Circular image */}
+              <motion.div
+                variants={imageScale}
+                className="relative w-20 h-20 rounded-full overflow-hidden shadow-lg"
+              >
+                <Image
+                  src={pillar.image}
+                  alt={pillar.title}
+                  fill
+                  className="object-cover"
+                />
+                {/* Color overlay */}
+                <div className={`absolute inset-0 ${pillar.bgColor} opacity-20`} />
+              </motion.div>
+
+              {/* SPACE */}
+              <div className="h-4" />
+
               {/* Pillar number */}
               <div
-                className={`text-4xl font-bold ${pillar.color}`}
+                className={`text-3xl font-bold ${pillar.color}`}
                 style={{ fontFamily: "var(--font-heading)" }}
               >
                 {pillar.number}
               </div>
 
               {/* SPACE */}
-              <div className="h-3" />
+              <div className="h-2" />
 
               {/* Pillar title */}
               <h3
-                className="text-base font-bold text-[var(--text-primary)] leading-tight h-12 flex items-center"
+                className="text-sm font-bold text-[var(--text-primary)] leading-tight h-10 flex items-center"
                 style={{ fontFamily: "var(--font-heading)" }}
               >
                 {pillar.title}
               </h3>
 
               {/* SPACE */}
-              <div className="h-4" />
+              <div className="h-3" />
 
               {/* Divider */}
-              <div className={`w-12 h-1 rounded-full bg-current ${pillar.color}`} />
+              <div className={`w-10 h-1 rounded-full bg-current ${pillar.color}`} />
 
               {/* SPACE */}
-              <div className="h-4" />
+              <div className="h-3" />
 
               {/* Key elements */}
-              <ul className="space-y-2">
+              <ul className="space-y-1">
                 {pillar.elements.map((element, idx) => (
                   <li
                     key={idx}
-                    className="text-xs text-[var(--text-secondary)] leading-snug"
+                    className="text-[11px] text-[var(--text-secondary)] leading-snug"
                   >
                     {element}
                   </li>
@@ -195,7 +229,7 @@ export default function PillarsSlide() {
         </motion.div>
 
         {/* SPACE */}
-        <div className="h-12" />
+        <div className="h-8" />
 
         {/* Footer tagline */}
         <motion.p
@@ -211,4 +245,3 @@ export default function PillarsSlide() {
     </section>
   );
 }
-
