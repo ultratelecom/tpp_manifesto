@@ -16,7 +16,7 @@ export default function HealthcareSlide() {
       description: "Patient records, telemedicine, remote monitoring" 
     },
     { 
-      image: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=400&h=400&fit=crop",
+      image: "https://images.pexels.com/photos/5452186/pexels-photo-5452186.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
       title: "Workforce Development", 
       description: "Training, leadership, professional growth" 
     },
