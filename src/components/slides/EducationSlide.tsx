@@ -17,7 +17,7 @@ export default function EducationSlide() {
       subtitle: "Tobago-centric, dual-track academic & technical",
     },
     {
-      image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&h=400&fit=crop",
+      image: "https://images.pexels.com/photos/8423068/pexels-photo-8423068.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
       title: "Technology Integration",
       subtitle: "AI, laptops, digital learning tools",
     },
