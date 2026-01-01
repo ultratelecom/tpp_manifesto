@@ -26,7 +26,7 @@ export default function InfrastructureSlide() {
     {
       name: "Build Tobago",
       jobs: "2,000",
-      image: "https://images.pexels.com/photos/6790977/pexels-photo-6790977.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
+      image: "https://images.pexels.com/photos/1647416/pexels-photo-1647416.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
       description: "Roads, schools, sport & civic centres",
       subtext: "10 ON/OFF workers to be regularized under Build Tobago Programme",
     },
