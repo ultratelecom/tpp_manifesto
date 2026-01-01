@@ -141,14 +141,14 @@ export default function HealthcareSlide() {
               className="text-5xl lg:text-6xl font-bold text-[var(--text-primary)]"
               style={{ fontFamily: "var(--font-heading)" }}
             >
-              -75%
+              75%
             </div>
             
             {/* SPACE */}
             <div className="h-2" />
             
             <div className="text-base font-semibold text-[var(--text-primary)]">
-              Wait Time Reduction
+              Wait Time Reduction for Hospital Services
             </div>
             
             {/* SPACE */}
