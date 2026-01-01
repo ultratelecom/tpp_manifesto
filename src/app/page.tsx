@@ -14,6 +14,8 @@ import FoodSecuritySlide from "@/components/slides/FoodSecuritySlide";
 import PublicInfrastructureSlide from "@/components/slides/PublicInfrastructureSlide";
 import PublicServiceSlide from "@/components/slides/PublicServiceSlide";
 import DigitalConnectivitySlide from "@/components/slides/DigitalConnectivitySlide";
+import EducationSlide from "@/components/slides/EducationSlide";
+import HealthcareSlide from "@/components/slides/HealthcareSlide";
 import AffordableHousingSlide from "@/components/slides/AffordableHousingSlide";
 import ClosingSlide from "@/components/slides/ClosingSlide";
 import SideNavigation from "@/components/ui/SideNavigation";
@@ -34,6 +36,8 @@ const slideIds = [
   "public-infrastructure",
   "public-service",
   "digital-connectivity",
+  "education",
+  "healthcare",
   "housing",
   "closing",
 ];
@@ -66,6 +70,8 @@ export default function Home() {
       <PublicInfrastructureSlide />
       <PublicServiceSlide />
       <DigitalConnectivitySlide />
+      <EducationSlide />
+      <HealthcareSlide />
       <AffordableHousingSlide />
 
       {/* Closing */}
