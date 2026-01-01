@@ -7,7 +7,7 @@ export default function SustainableTourismSlide() {
   const stats = [
     { value: "+25%", label: "Long-Stay", sublabel: "by 2030" },
     { value: "+60%", label: "Short-Stay", sublabel: "by 2035" },
-    { value: "1,500", label: "5★ Rooms", sublabel: "by 2045" },
+    { value: "1,500", label: "4/5★ Rooms", sublabel: "by 2045" },
   ];
 
   const pillars = [
