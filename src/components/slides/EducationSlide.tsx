@@ -22,7 +22,7 @@ export default function EducationSlide() {
       subtitle: "AI, laptops, digital learning tools",
     },
     {
-      image: "https://images.unsplash.com/photo-1544717305-2782549b5136?w=400&h=400&fit=crop",
+      image: "https://images.pexels.com/photos/5905702/pexels-photo-5905702.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
       title: "Early Childhood Education",
       subtitle: "Certified teachers, standardized qualifications",
     },
