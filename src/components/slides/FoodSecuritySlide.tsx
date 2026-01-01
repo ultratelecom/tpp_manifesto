@@ -27,7 +27,7 @@ export default function FoodSecuritySlide() {
       subtitle: null,
     },
     {
-      image: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=400&h=400&fit=crop",
+      image: "https://images.pexels.com/photos/1756311/pexels-photo-1756311.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
       title: "Agricultural Access Roads",
       subtitle: null,
     },
