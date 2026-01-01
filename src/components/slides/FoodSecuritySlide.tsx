@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function FoodSecuritySlide() {
   const stats = [
-    { value: "8%", label: "GDP from Agriculture", sublabel: "by 2045" },
+    { value: "8%", label: "GDP from Agriculture", sublabel: "by 2035" },
     { value: "+40%", label: "Indigenous Crops", sublabel: "self-sufficiency" },
     { value: "+60%", label: "Fish Harvest", sublabel: "commercial increase" },
   ];
