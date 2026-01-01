@@ -10,7 +10,7 @@ export default function DefinitionSlide() {
       title: "Minimum Living Wage",
       description: "At least $5,500/month by 2027",
       subtext: "This will apply to CEPEP & URP workers",
-      subtext2: "Also applies to regularize 10 ON/OFF workers",
+      subtext2: "Also applies to regularized 10 ON/OFF workers",
     },
     {
       image: "https://images.pexels.com/photos/4559593/pexels-photo-4559593.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
