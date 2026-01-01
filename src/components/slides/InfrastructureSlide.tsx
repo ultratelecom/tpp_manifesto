@@ -28,6 +28,7 @@ export default function InfrastructureSlide() {
       jobs: "2,000",
       image: "https://images.pexels.com/photos/6790977/pexels-photo-6790977.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
       description: "Roads, schools, sport & civic centres",
+      subtext: "10 ON/OFF workers to be regularized under Build Tobago Programme",
     },
   ];
 
@@ -163,6 +164,15 @@ export default function InfrastructureSlide() {
               <p className="text-sm text-[var(--text-secondary)]">
                 {initiative.description}
               </p>
+              
+              {initiative.subtext && (
+                <>
+                  <div className="h-1" />
+                  <p className="text-xs text-[var(--text-muted)] italic">
+                    {initiative.subtext}
+                  </p>
+                </>
+              )}
             </motion.div>
           ))}
         </motion.div>
