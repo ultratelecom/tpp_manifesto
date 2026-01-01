@@ -72,7 +72,7 @@ export default function PillarsSlide() {
     {
       number: "5",
       title: "Implementation Logic",
-      image: "https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?w=400&h=400&fit=crop",
+      image: "https://images.pexels.com/photos/7688430/pexels-photo-7688430.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
       elements: [
         "Pre-Planning & Governance",
         "Core Planning & Goals",
