@@ -11,6 +11,7 @@ import FoodSecuritySlide from "@/components/slides/FoodSecuritySlide";
 import PublicInfrastructureSlide from "@/components/slides/PublicInfrastructureSlide";
 import EducationSlide from "@/components/slides/EducationSlide";
 import HealthcareSlide from "@/components/slides/HealthcareSlide";
+import SocialVulnerabilitySlide from "@/components/slides/SocialVulnerabilitySlide";
 import AffordableHousingSlide from "@/components/slides/AffordableHousingSlide";
 import DefinitionSlide from "@/components/slides/DefinitionSlide";
 import ImpactSlide from "@/components/slides/ImpactSlide";
@@ -33,6 +34,7 @@ const slideIds = [
   "public-infrastructure",
   "education",
   "healthcare",
+  "social-vulnerability",
   "housing",
   "definition",
   "impact",
@@ -65,6 +67,7 @@ export default function Home() {
       <PublicInfrastructureSlide />
       <EducationSlide />
       <HealthcareSlide />
+      <SocialVulnerabilitySlide />
       <AffordableHousingSlide />
 
       {/* Sustainable Job Creation Section */}
