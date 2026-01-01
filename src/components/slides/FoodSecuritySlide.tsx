@@ -173,14 +173,14 @@ export default function FoodSecuritySlide() {
               {/* SPACE */}
               <div className="h-4" />
               
-              <h3 className="text-sm font-bold text-green-700 leading-tight">
+              <h3 className="text-lg font-bold text-green-700 leading-tight">
                 {prog.title}
               </h3>
               
               {prog.subtitle && (
                 <>
                   <div className="h-2" />
-                  <p className="text-sm text-[var(--text-secondary)] italic">
+                  <p className="text-base text-[var(--text-secondary)] italic">
                     {prog.subtitle}
                   </p>
                 </>

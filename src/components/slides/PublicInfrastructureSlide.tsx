@@ -164,7 +164,7 @@ export default function PublicInfrastructureSlide() {
               {/* SPACE */}
               <div className="h-4" />
               
-              <h3 className="text-sm font-bold text-[var(--text-primary)] text-center">
+              <h3 className="text-lg font-bold text-[var(--text-primary)] text-center">
                 {item.title}
               </h3>
               
@@ -176,7 +176,7 @@ export default function PublicInfrastructureSlide() {
                 {item.items.map((point, idx) => (
                   <li
                     key={idx}
-                    className="text-sm text-[var(--text-secondary)] leading-tight flex items-start gap-1"
+                    className="text-base text-[var(--text-secondary)] leading-tight flex items-start gap-1"
                   >
                     <span className="text-orange-600 mt-0.5 text-sm">•</span>
                     <span>{point}</span>

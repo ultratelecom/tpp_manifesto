@@ -173,14 +173,14 @@ export default function EducationSlide() {
               {/* SPACE */}
               <div className="h-4" />
               
-              <h3 className="text-sm font-bold text-[var(--text-primary)]">
+              <h3 className="text-lg font-bold text-[var(--text-primary)]">
                 {prog.title}
               </h3>
               
               {/* SPACE */}
               <div className="h-2" />
               
-              <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
+              <p className="text-base text-[var(--text-secondary)] leading-relaxed">
                 {prog.subtitle}
               </p>
             </motion.div>

@@ -133,7 +133,7 @@ export default function PublicServiceSlide() {
                 {/* SPACE */}
                 <div className="h-1" />
                 
-                <p className="text-sm text-[var(--text-secondary)]">
+                <p className="text-base text-[var(--text-secondary)]">
                   {item.description}
                 </p>
               </div>

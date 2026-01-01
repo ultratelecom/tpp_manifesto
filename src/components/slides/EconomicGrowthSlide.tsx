@@ -135,10 +135,10 @@ export default function EconomicGrowthSlide() {
               <div key={item.title} className="flex items-start gap-3">
                 <span className="text-[var(--tpp-blue)] mt-1">•</span>
                 <div>
-                  <h3 className="text-sm font-bold text-[var(--text-primary)]">
+                  <h3 className="text-lg font-bold text-[var(--text-primary)]">
                     {item.title}
                   </h3>
-                  <p className="text-sm text-[var(--text-secondary)]">
+                  <p className="text-base text-[var(--text-secondary)]">
                     {item.description}
                   </p>
                 </div>

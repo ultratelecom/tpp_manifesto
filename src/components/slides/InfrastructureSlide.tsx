@@ -161,7 +161,7 @@ export default function InfrastructureSlide() {
               {/* SPACE */}
               <div className="h-2" />
               
-              <p className="text-sm text-[var(--text-secondary)]">
+              <p className="text-base text-[var(--text-secondary)]">
                 {initiative.description}
               </p>
               

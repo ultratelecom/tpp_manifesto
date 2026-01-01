@@ -188,7 +188,7 @@ export default function ConstitutionalAutonomySlide() {
               {/* SPACE */}
               <div className="h-3" />
               
-              <p className="text-sm text-[var(--text-secondary)]">
+              <p className="text-base text-[var(--text-secondary)]">
                 {pillar.description}
               </p>
             </motion.div>

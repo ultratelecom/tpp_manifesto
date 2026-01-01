@@ -103,7 +103,7 @@ export default function CleanEnergySlide() {
                 Solar Incentive Jobs
               </div>
               <div className="h-1" />
-              <div className="text-sm text-[var(--text-secondary)]">
+              <div className="text-base text-[var(--text-secondary)]">
                 Manufacturing, installation
               </div>
             </div>
@@ -120,7 +120,7 @@ export default function CleanEnergySlide() {
                 Public Building Jobs
               </div>
               <div className="h-1" />
-              <div className="text-sm text-[var(--text-secondary)]">
+              <div className="text-base text-[var(--text-secondary)]">
                 Installation, maintenance
               </div>
             </div>
@@ -137,7 +137,7 @@ export default function CleanEnergySlide() {
                 Green Transportation
               </div>
               <div className="h-1" />
-              <div className="text-sm text-[var(--text-secondary)]">
+              <div className="text-base text-[var(--text-secondary)]">
                 E-busses and charging stations
               </div>
             </div>

@@ -216,14 +216,14 @@ export default function DigitalConnectivitySlide() {
               {/* SPACE */}
               <div className="h-4" />
               
-              <h3 className="text-sm font-bold text-[var(--text-primary)]">
+              <h3 className="text-lg font-bold text-[var(--text-primary)]">
                 {item.title}
               </h3>
               
               {/* SPACE */}
               <div className="h-2" />
               
-              <p className="text-sm text-[var(--text-secondary)]">
+              <p className="text-base text-[var(--text-secondary)]">
                 {item.description}
               </p>
             </motion.div>

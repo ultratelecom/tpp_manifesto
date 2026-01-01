@@ -204,7 +204,7 @@ export default function AffordableHousingSlide() {
               {/* SPACE */}
               <div className="h-4" />
               
-              <h3 className="text-sm font-bold text-[var(--text-primary)] text-center">
+              <h3 className="text-lg font-bold text-[var(--text-primary)] text-center">
                 {prog.title}
               </h3>
               
@@ -226,7 +226,7 @@ export default function AffordableHousingSlide() {
                 {prog.items.map((item, idx) => (
                   <li
                     key={idx}
-                    className="text-sm text-[var(--text-secondary)] leading-relaxed flex items-start gap-2"
+                    className="text-base text-[var(--text-secondary)] leading-relaxed flex items-start gap-2"
                   >
                     <span className="text-rose-600 mt-0.5">•</span>
                     <span>{item}</span>
