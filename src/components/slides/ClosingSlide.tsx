@@ -89,7 +89,7 @@ export default function ClosingSlide() {
           </p>
           <div className="h-3" />
           <p className="text-sm text-[var(--text-muted)]">
-            Manifesto 2025 • Sustainable & Meaningful Job Creation
+            Blueprint 2025 - 2045
           </p>
         </motion.div>
       </div>
