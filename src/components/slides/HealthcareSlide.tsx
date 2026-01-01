@@ -11,7 +11,7 @@ export default function HealthcareSlide() {
       description: "Modernized hospitals, clinics, diagnostic capacity" 
     },
     { 
-      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=400&fit=crop",
+      image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&h=400&fit=crop",
       title: "Digital Health", 
       description: "Patient records, telemedicine, remote monitoring" 
     },
