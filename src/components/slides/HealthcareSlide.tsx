@@ -191,14 +191,14 @@ export default function HealthcareSlide() {
               {/* SPACE */}
               <div className="h-4" />
               
-              <h3 className="text-sm font-bold text-red-600">
+              <h3 className="text-lg font-bold text-red-600">
                 {item.title}
               </h3>
               
               {/* SPACE */}
               <div className="h-2" />
               
-              <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
+              <p className="text-base text-[var(--text-secondary)] leading-relaxed">
                 {item.description}
               </p>
             </motion.div>
