@@ -150,7 +150,7 @@ export default function PublicServiceSlide() {
           className="flex-shrink-0 relative w-full lg:w-[450px] h-[400px] lg:h-[500px] rounded-3xl overflow-hidden shadow-2xl"
         >
           <Image
-            src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=900&h=1000&fit=crop"
+            src="https://i0.wp.com/truveris.com/wp-content/uploads/2024/03/glp-1-news-roundup-resource-center.png?fit=900,1000&ssl=1"
             alt="Government service and teamwork"
             fill
             className="object-cover"
