@@ -102,18 +102,34 @@ export default function SustainableTourismSlide() {
         </motion.p>
 
         {/* SPACE */}
-        <div className="h-3" />
+        <div className="h-6" />
 
-        {/* GDP Target */}
-        <motion.p
+        {/* Economic Contribution of Tourism */}
+        <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={fadeIn}
-          className="text-base font-semibold text-teal-600 text-center"
+          className="text-center"
         >
-          Increase the contribution of tourism to 6% of GDP by 2030 and 8% of GDP by 2035
-        </motion.p>
+          <h3 className="text-2xl font-bold text-teal-700" style={{ fontFamily: "var(--font-heading)" }}>
+            Economic Contribution of Tourism
+          </h3>
+          
+          {/* SPACE */}
+          <div className="h-3" />
+          
+          <div className="text-3xl lg:text-4xl font-bold text-teal-600" style={{ fontFamily: "var(--font-heading)" }}>
+            6% by 2030
+          </div>
+          
+          {/* SPACE */}
+          <div className="h-2" />
+          
+          <div className="text-3xl lg:text-4xl font-bold text-teal-600" style={{ fontFamily: "var(--font-heading)" }}>
+            8% by 2035
+          </div>
+        </motion.div>
 
         {/* SPACE */}
         <div className="h-10" />
