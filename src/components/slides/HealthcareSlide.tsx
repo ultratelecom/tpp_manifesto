@@ -81,7 +81,7 @@ export default function HealthcareSlide() {
           className="text-4xl lg:text-6xl font-bold text-[var(--text-primary)] text-center"
           style={{ fontFamily: "var(--font-heading)" }}
         >
-          Wellness & <span className="text-red-600">Healthcare</span>
+          Wellness & <span className="text-red-600">Healthcare Delivery</span>
         </motion.h2>
 
         {/* SPACE */}
