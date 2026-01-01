@@ -12,7 +12,7 @@ export default function DefinitionSlide() {
       subtext: "This will apply to CEPEP & URP workers",
     },
     {
-      image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&h=400&fit=crop",
+      image: "https://images.pexels.com/photos/4559593/pexels-photo-4559593.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
       title: "Continuous Employment",
       description: "Stable, ongoing work without interruption",
       subtext: "",
