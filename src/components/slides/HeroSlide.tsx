@@ -34,7 +34,7 @@ export default function HeroSlide() {
           className="mb-12"
         >
           <Image
-            src="/tpp_logo.jpeg"
+            src="/tpp_new_logo.png"
             alt="Tobago People's Party Logo"
             width={120}
             height={120}

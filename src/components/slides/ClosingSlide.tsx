@@ -43,7 +43,7 @@ export default function ClosingSlide() {
           variants={scaleIn}
         >
           <Image
-            src="/tpp_logo.jpeg"
+            src="/tpp_new_logo.png"
             alt="Tobago People's Party Logo"
             width={144}
             height={144}
