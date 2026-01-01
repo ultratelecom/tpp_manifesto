@@ -24,7 +24,7 @@ export default function FoodSecuritySlide() {
       title: "Tobago Agricultural Research Institute",
     },
     {
-      image: "https://images.unsplash.com/photo-1515162816999-a0c47dc192f7?w=400&h=400&fit=crop",
+      image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=400&fit=crop",
       title: "Agricultural Access Roads",
     },
   ];
