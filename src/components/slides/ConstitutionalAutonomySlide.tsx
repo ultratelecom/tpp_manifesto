@@ -145,7 +145,7 @@ export default function ConstitutionalAutonomySlide() {
               className="text-6xl lg:text-8xl font-bold text-[var(--text-primary)]"
               style={{ fontFamily: "var(--font-heading)" }}
             >
-              2028
+              2027
             </div>
             
             {/* SPACE */}
