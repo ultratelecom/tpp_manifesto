@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 export default function ClosingSlide() {
@@ -40,9 +41,14 @@ export default function ClosingSlide() {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={scaleIn}
-          className="w-36 h-36 border-3 border-dashed border-[var(--tpp-blue)] rounded-full flex items-center justify-center text-[var(--tpp-blue)] text-2xl font-bold opacity-60"
         >
-          TPP
+          <Image
+            src="/tpp_logo.jpeg"
+            alt="Tobago People's Party Logo"
+            width={144}
+            height={144}
+            className="rounded-full shadow-lg"
+          />
         </motion.div>
 
         {/* SPACE */}

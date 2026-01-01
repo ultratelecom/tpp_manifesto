@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 export default function HeroSlide() {
@@ -32,9 +33,13 @@ export default function HeroSlide() {
           variants={scaleIn}
           className="mb-12"
         >
-          <div className="w-24 h-24 border-2 border-dashed border-[var(--tpp-blue)] rounded-full flex items-center justify-center text-[var(--tpp-blue)] text-sm font-medium opacity-60">
-            TPP LOGO
-          </div>
+          <Image
+            src="/tpp_logo.jpeg"
+            alt="Tobago People's Party Logo"
+            width={120}
+            height={120}
+            className="rounded-full shadow-lg"
+          />
         </motion.div>
 
         {/* Main headline */}
