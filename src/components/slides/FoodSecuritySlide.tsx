@@ -19,7 +19,7 @@ export default function FoodSecuritySlide() {
     {
       image: "https://images.unsplash.com/photo-1605000797499-95a51c5269ae?w=400&h=400&fit=crop",
       title: "Young Farmers Agripreneurship",
-      subtitle: "$100,000 Loans for young farmers",
+      subtitle: "$100,000 Grants for young farmerss",
     },
     {
       image: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=400&h=400&fit=crop",
