@@ -68,7 +68,7 @@ export default function ImpactSlide() {
           className="text-[10rem] lg:text-[14rem] font-extrabold text-[var(--tpp-blue)] leading-none tracking-tighter"
           style={{ fontFamily: "var(--font-heading)" }}
         >
-          7,975<span className="text-[6rem] lg:text-[8rem]">+</span>
+          8,175<span className="text-[6rem] lg:text-[8rem]">+</span>
         </motion.div>
 
         {/* SPACE */}
