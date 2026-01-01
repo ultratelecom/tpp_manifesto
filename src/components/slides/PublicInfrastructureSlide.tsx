@@ -39,7 +39,7 @@ export default function PublicInfrastructureSlide() {
       ],
     },
     {
-      image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=400&h=400&fit=crop",
+      image: "https://images.pexels.com/photos/6635621/pexels-photo-6635621.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
       title: "Urban, Suburban & Village Growth",
       items: [
         "Multi-Level Parkade in Scarborough",
