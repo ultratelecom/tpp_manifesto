@@ -26,7 +26,7 @@ export default function InfrastructureSlide() {
     {
       name: "Build Tobago",
       jobs: "2,000",
-      image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&h=400&fit=crop",
+      image: "https://images.pexels.com/photos/6790977/pexels-photo-6790977.jpeg?auto=compress&cs=tinysrgb&w=400&h=400&fit=crop",
       description: "Roads, schools, sport & civic centres",
     },
   ];
