@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 export default function PublicInfrastructureSlide() {
   const initiatives = [
     {
-      image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=400&h=400&fit=crop",
+      image: "https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=400&h=400&fit=crop",
       title: "Road Network",
       items: [
         "Overpass from Highmoor Connector to Sangster Hill Road",
