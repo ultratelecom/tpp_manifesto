@@ -122,7 +122,10 @@ export default function HealthcareSlide() {
             <div className="h-2" />
             
             <div className="text-base font-semibold text-[var(--text-primary)]">
-              Female HALE Target
+              Male & Female Healthy Life
+            </div>
+            <div className="text-base font-semibold text-[var(--text-primary)]">
+              Expectancy At Birth
             </div>
             
             {/* SPACE */}
