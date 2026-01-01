@@ -5,9 +5,9 @@ import { motion } from "framer-motion";
 
 export default function EducationSlide() {
   const stats = [
-    { value: "40%", label: "Post-Secondary Training", sublabel: "by 2035" },
-    { value: "50%", label: "Matriculation Rate", sublabel: "by 2035" },
-    { value: "60%", label: "Graduation Rate", sublabel: "by 2045" },
+    { value: "50%", label: "Certification From Secondary School", sublabel: "by 2030" },
+    { value: "40%", label: "of Workforce Post-Secondary Training", sublabel: "by 2035" },
+    { value: "60%", label: "of Workforce Post-Secondary Training", sublabel: "by 2045" },
   ];
 
   const programmes = [
