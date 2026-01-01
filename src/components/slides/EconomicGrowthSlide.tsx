@@ -9,6 +9,7 @@ export default function EconomicGrowthSlide() {
     { title: "Local Entrepreneurship", description: "Business incubators and funding" },
     { title: "Economic Diversification", description: "Agriculture, tech, renewable energy" },
     { title: "Export Enhancement", description: "Access to international markets" },
+    { title: "Tobago Development Fund", description: "Off-budget financing for business development and major government projects" },
   ];
 
   const slideInLeft = {
@@ -20,7 +21,7 @@ export default function EconomicGrowthSlide() {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.12, delayChildren: 0.2 }
+      transition: { staggerChildren: 0.1, delayChildren: 0.2 }
     }
   };
 
@@ -31,14 +32,14 @@ export default function EconomicGrowthSlide() {
 
   return (
     <section id="economic-growth" className="slide bg-white relative">
-      <div className="relative z-10 flex flex-col lg:flex-row items-center justify-center gap-20 w-full h-full px-20">
+      <div className="relative z-10 flex flex-col lg:flex-row items-center justify-center gap-16 w-full h-full px-16">
         {/* Left: Large Image */}
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={slideInLeft}
-          className="flex-shrink-0 relative w-full lg:w-[450px] h-[400px] lg:h-[500px] rounded-3xl overflow-hidden shadow-2xl"
+          className="flex-shrink-0 relative w-full lg:w-[400px] h-[350px] lg:h-[450px] rounded-3xl overflow-hidden shadow-2xl"
         >
           <Image
             src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=900&h=1000&fit=crop"
@@ -69,26 +70,26 @@ export default function EconomicGrowthSlide() {
           </motion.div>
 
           {/* SPACE */}
-          <div className="h-6" />
+          <div className="h-4" />
 
           <motion.h2
             variants={staggerItem}
-            className="text-5xl lg:text-6xl font-bold text-[var(--text-primary)] leading-tight"
+            className="text-4xl lg:text-5xl font-bold text-[var(--text-primary)] leading-tight"
             style={{ fontFamily: "var(--font-heading)" }}
           >
             Economic <span className="text-[var(--tpp-blue)]">Growth</span>
           </motion.h2>
 
           {/* SPACE */}
-          <div className="h-10" />
+          <div className="h-6" />
 
-          <motion.p variants={staggerItem} className="text-xl text-[var(--text-secondary)] leading-relaxed">
+          <motion.p variants={staggerItem} className="text-lg text-[var(--text-secondary)] leading-relaxed">
             Sustainable growth pathways designed around Tobago's values, 
             market needs, and eight key capital investment categories.
           </motion.p>
 
           {/* SPACE */}
-          <div className="h-16" />
+          <div className="h-10" />
 
           {/* GDP Targets */}
           <motion.div variants={staggerItem} className="flex gap-12">
@@ -101,10 +102,10 @@ export default function EconomicGrowthSlide() {
               <div className="h-3" />
               
               <div
-                className="text-5xl font-bold text-[var(--tpp-blue)]"
+                className="text-4xl font-bold text-[var(--tpp-blue)]"
                 style={{ fontFamily: "var(--font-heading)" }}
               >
-                $10,000
+                $10,000 USD
               </div>
             </div>
 
@@ -117,31 +118,30 @@ export default function EconomicGrowthSlide() {
               <div className="h-3" />
               
               <div
-                className="text-5xl font-bold text-[var(--text-primary)]"
+                className="text-4xl font-bold text-[var(--text-primary)]"
                 style={{ fontFamily: "var(--font-heading)" }}
               >
-                $20,000
+                $20,000 USD
               </div>
             </div>
           </motion.div>
 
           {/* SPACE */}
-          <div className="h-16" />
+          <div className="h-10" />
 
-          {/* Key initiatives */}
-          <motion.div variants={staggerItem} className="grid grid-cols-2 gap-6">
+          {/* Key initiatives - now 5 items */}
+          <motion.div variants={staggerItem} className="space-y-4">
             {initiatives.map((item) => (
-              <div key={item.title}>
-                <h3 className="text-base font-bold text-[var(--text-primary)]">
-                  {item.title}
-                </h3>
-                
-                {/* SPACE */}
-                <div className="h-2" />
-                
-                <p className="text-sm text-[var(--text-secondary)]">
-                  {item.description}
-                </p>
+              <div key={item.title} className="flex items-start gap-3">
+                <span className="text-[var(--tpp-blue)] mt-1">•</span>
+                <div>
+                  <h3 className="text-sm font-bold text-[var(--text-primary)]">
+                    {item.title}
+                  </h3>
+                  <p className="text-xs text-[var(--text-secondary)]">
+                    {item.description}
+                  </p>
+                </div>
               </div>
             ))}
           </motion.div>

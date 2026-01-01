@@ -7,15 +7,15 @@ export default function InfrastructureSlide() {
   const initiatives = [
     {
       name: "1000 Homes",
-      jobs: "3,000",
+      jobs: "4,000",
       image: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=400&h=400&fit=crop",
       description: "Service lots and dwelling units",
     },
     {
-      name: "Tourism Upgrade",
-      jobs: "100",
+      name: "Tourism Infrastructure",
+      jobs: "600",
       image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400&h=400&fit=crop",
-      description: "Recreation sites, forts, trails",
+      description: "Marriott Resort - Rockly Bay, Hilton International - Roxborough, Recreation sites, forts, trails",
     },
     {
       name: "Heritage Village",
@@ -25,7 +25,7 @@ export default function InfrastructureSlide() {
     },
     {
       name: "Build Tobago",
-      jobs: "1,000+",
+      jobs: "2,000",
       image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&h=400&fit=crop",
       description: "Roads, schools, sport & civic centres",
     },
@@ -102,7 +102,7 @@ export default function InfrastructureSlide() {
             className="text-7xl lg:text-8xl font-bold text-[var(--text-primary)]"
             style={{ fontFamily: "var(--font-heading)" }}
           >
-            4,275+
+            6,775+
           </div>
           
           {/* SPACE */}

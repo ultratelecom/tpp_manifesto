@@ -49,7 +49,7 @@ export default function CleanEnergySlide() {
           {/* Initiative label */}
           <div className="absolute bottom-5 left-5 text-white">
             <div className="text-xs font-semibold tracking-widest uppercase opacity-80">
-              Initiative 01
+              Clean Energy
             </div>
           </div>
         </motion.div>
@@ -89,39 +89,56 @@ export default function CleanEnergySlide() {
           {/* SPACE */}
           <div className="h-8" />
 
-          {/* Job impacts side by side */}
-          <motion.div variants={staggerItem} className="flex gap-12">
+          {/* Job impacts - 3 columns */}
+          <motion.div variants={staggerItem} className="flex gap-8">
             <div>
               <div
-                className="text-4xl font-bold text-[var(--text-primary)]"
+                className="text-3xl font-bold text-[var(--text-primary)]"
                 style={{ fontFamily: "var(--font-heading)" }}
               >
                 +300
               </div>
               <div className="h-2" />
-              <div className="text-base font-semibold text-[var(--text-primary)]">
+              <div className="text-sm font-semibold text-[var(--text-primary)]">
                 Solar Incentive Jobs
               </div>
               <div className="h-1" />
-              <div className="text-sm text-[var(--text-secondary)]">
-                Manufacturing, installation, maintenance
+              <div className="text-xs text-[var(--text-secondary)]">
+                Manufacturing, installation
               </div>
             </div>
 
             <div>
               <div
-                className="text-4xl font-bold text-[var(--text-primary)]"
+                className="text-3xl font-bold text-[var(--text-primary)]"
                 style={{ fontFamily: "var(--font-heading)" }}
               >
                 +100
               </div>
               <div className="h-2" />
-              <div className="text-base font-semibold text-[var(--text-primary)]">
+              <div className="text-sm font-semibold text-[var(--text-primary)]">
                 Public Building Jobs
               </div>
               <div className="h-1" />
-              <div className="text-sm text-[var(--text-secondary)]">
-                Installation and maintenance
+              <div className="text-xs text-[var(--text-secondary)]">
+                Installation, maintenance
+              </div>
+            </div>
+
+            <div>
+              <div
+                className="text-3xl font-bold text-[var(--text-primary)]"
+                style={{ fontFamily: "var(--font-heading)" }}
+              >
+                +200
+              </div>
+              <div className="h-2" />
+              <div className="text-sm font-semibold text-[var(--text-primary)]">
+                Green Transportation
+              </div>
+              <div className="h-1" />
+              <div className="text-xs text-[var(--text-secondary)]">
+                E-busses and charging stations
               </div>
             </div>
           </motion.div>
@@ -134,7 +151,7 @@ export default function CleanEnergySlide() {
             <span className="text-2xl font-bold text-[var(--text-primary)]">
               Total Impact:{" "}
             </span>
-            <span className="text-2xl font-bold text-emerald-600">400 Jobs</span>
+            <span className="text-2xl font-bold text-emerald-600">600 Jobs</span>
           </motion.div>
         </motion.div>
       </div>

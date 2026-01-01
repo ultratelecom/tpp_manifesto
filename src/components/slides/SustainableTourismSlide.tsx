@@ -14,38 +14,18 @@ export default function SustainableTourismSlide() {
     {
       image: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=400&h=400&fit=crop",
       title: "Infrastructure",
-      items: [
-        "Pigeon Point Heritage Park",
-        "Store Bay Beach Facility",
-      ],
     },
     {
       image: "https://images.unsplash.com/photo-1582719508461-905c673771fd?w=400&h=400&fit=crop",
       title: "Luxury Hotels",
-      items: [
-        "Marriott Resort",
-        "Hilton International",
-        "Dollar Tree Resort",
-      ],
     },
     {
       image: "https://images.unsplash.com/photo-1528543606781-2f6e6857f318?w=400&h=400&fit=crop",
       title: "Community Tourism",
-      items: [
-        "Buccoo Beach Facility",
-        "Delaford Beach Facility",
-        "Louis D'Or Beach Facility",
-        "Grange Beach Facility",
-      ],
     },
     {
       image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&h=400&fit=crop",
       title: "Eco-Tourism",
-      items: [
-        "Roxborough nature trail",
-        "Kings Bay Waterfall",
-        "Argyle Waterfall",
-      ],
     },
   ];
 
@@ -173,24 +153,24 @@ export default function SustainableTourismSlide() {
         </motion.div>
 
         {/* SPACE */}
-        <div className="h-12" />
+        <div className="h-16" />
 
-        {/* Four pillars with images and bullet points */}
+        {/* Four pillars with images only - no sub-examples */}
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
           variants={staggerContainer}
-          className="grid grid-cols-2 lg:grid-cols-4 gap-8 w-full max-w-6xl"
+          className="grid grid-cols-2 lg:grid-cols-4 gap-12 w-full max-w-5xl"
         >
           {pillars.map((pillar) => (
             <motion.div
               key={pillar.title}
               variants={cardItem}
-              className="flex flex-col items-center"
+              className="flex flex-col items-center text-center"
             >
               {/* Square image with rounded corners */}
-              <div className="relative w-[110px] h-[110px] rounded-2xl overflow-hidden shadow-lg">
+              <div className="relative w-[140px] h-[140px] rounded-2xl overflow-hidden shadow-lg">
                 <Image
                   src={pillar.image}
                   alt={pillar.title}
@@ -201,27 +181,11 @@ export default function SustainableTourismSlide() {
               </div>
               
               {/* SPACE */}
-              <div className="h-4" />
+              <div className="h-6" />
               
-              <h3 className="text-base font-bold text-[var(--text-primary)] text-center">
+              <h3 className="text-lg font-bold text-[var(--text-primary)]">
                 {pillar.title}
               </h3>
-              
-              {/* SPACE */}
-              <div className="h-3" />
-              
-              {/* Bullet points */}
-              <ul className="space-y-1 text-left w-full">
-                {pillar.items.map((item, idx) => (
-                  <li
-                    key={idx}
-                    className="text-xs text-[var(--text-secondary)] leading-relaxed flex items-start gap-2"
-                  >
-                    <span className="text-teal-600 mt-0.5">•</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
             </motion.div>
           ))}
         </motion.div>

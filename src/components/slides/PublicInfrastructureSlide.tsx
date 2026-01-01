@@ -13,6 +13,9 @@ export default function PublicInfrastructureSlide() {
         "Runnemede Bypass along Des Vignes",
         "Darrel Spring Boardwalk",
         "Milford Court–Pigeon Point Connector",
+        "Turpin Bend - Charlottesville",
+        "L'Anse Fourmi/Charlottesville Link Road Restoration",
+        "Badrock Restoration",
       ],
     },
     {
@@ -139,7 +142,7 @@ export default function PublicInfrastructureSlide() {
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
           variants={staggerContainer}
-          className="grid grid-cols-2 lg:grid-cols-4 gap-8 w-full max-w-7xl"
+          className="grid grid-cols-2 lg:grid-cols-4 gap-6 w-full max-w-7xl"
         >
           {initiatives.map((item) => (
             <motion.div
@@ -148,7 +151,7 @@ export default function PublicInfrastructureSlide() {
               className="flex flex-col items-center"
             >
               {/* Square image with rounded corners */}
-              <div className="relative w-[120px] h-[120px] rounded-2xl overflow-hidden shadow-lg">
+              <div className="relative w-[100px] h-[100px] rounded-2xl overflow-hidden shadow-lg">
                 <Image
                   src={item.image}
                   alt={item.title}
@@ -159,23 +162,23 @@ export default function PublicInfrastructureSlide() {
               </div>
               
               {/* SPACE */}
-              <div className="h-5" />
+              <div className="h-4" />
               
-              <h3 className="text-base font-bold text-[var(--text-primary)] text-center">
+              <h3 className="text-sm font-bold text-[var(--text-primary)] text-center">
                 {item.title}
               </h3>
               
               {/* SPACE */}
-              <div className="h-3" />
+              <div className="h-2" />
               
               {/* Bullet points */}
-              <ul className="space-y-1 text-left w-full">
+              <ul className="space-y-0.5 text-left w-full">
                 {item.items.map((point, idx) => (
                   <li
                     key={idx}
-                    className="text-xs text-[var(--text-secondary)] leading-relaxed flex items-start gap-2"
+                    className="text-xs text-[var(--text-secondary)] leading-tight flex items-start gap-1"
                   >
-                    <span className="text-orange-600 mt-0.5">•</span>
+                    <span className="text-orange-600 mt-0.5 text-xs">•</span>
                     <span>{point}</span>
                   </li>
                 ))}

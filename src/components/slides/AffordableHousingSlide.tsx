@@ -15,7 +15,6 @@ export default function AffordableHousingSlide() {
       image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=400&h=400&fit=crop",
       title: "Land for Landless",
       subtitle: "200-Lots",
-      description: "Fully developed service lots",
       items: [
         "Adelphi, Courland, Belle Garden",
         "Louis D'Or, Blenheim",
@@ -32,6 +31,15 @@ export default function AffordableHousingSlide() {
       title: "HOME Programme",
       subtitle: null,
       items: ["Home Ownership Made Easy"],
+    },
+    {
+      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&h=400&fit=crop",
+      title: "P.O.S.H",
+      subtitle: "500-Service Lots",
+      items: [
+        "Distribution of derelict quarters",
+        "Distribution of service lots",
+      ],
     },
   ];
 
@@ -54,7 +62,7 @@ export default function AffordableHousingSlide() {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.12, delayChildren: 0.3 }
+      transition: { staggerChildren: 0.1, delayChildren: 0.3 }
     }
   };
 
@@ -168,13 +176,13 @@ export default function AffordableHousingSlide() {
         {/* SPACE */}
         <div className="h-12" />
 
-        {/* Four programmes with images */}
+        {/* Five programmes with images */}
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
           variants={staggerContainer}
-          className="grid grid-cols-2 lg:grid-cols-4 gap-8 w-full max-w-6xl"
+          className="grid grid-cols-2 lg:grid-cols-5 gap-6 w-full max-w-6xl"
         >
           {programmes.map((prog) => (
             <motion.div
@@ -183,7 +191,7 @@ export default function AffordableHousingSlide() {
               className="flex flex-col items-center"
             >
               {/* Square image with rounded corners */}
-              <div className="relative w-[110px] h-[110px] rounded-2xl overflow-hidden shadow-lg">
+              <div className="relative w-[90px] h-[90px] rounded-2xl overflow-hidden shadow-lg">
                 <Image
                   src={prog.image}
                   alt={prog.title}
@@ -196,7 +204,7 @@ export default function AffordableHousingSlide() {
               {/* SPACE */}
               <div className="h-4" />
               
-              <h3 className="text-base font-bold text-[var(--text-primary)] text-center">
+              <h3 className="text-sm font-bold text-[var(--text-primary)] text-center">
                 {prog.title}
               </h3>
               
@@ -204,14 +212,14 @@ export default function AffordableHousingSlide() {
               {prog.subtitle && (
                 <>
                   <div className="h-1" />
-                  <div className="text-sm font-semibold text-rose-600">
+                  <div className="text-xs font-semibold text-rose-600">
                     {prog.subtitle}
                   </div>
                 </>
               )}
               
               {/* SPACE */}
-              <div className="h-3" />
+              <div className="h-2" />
               
               {/* Bullet points */}
               <ul className="space-y-1 text-left w-full">

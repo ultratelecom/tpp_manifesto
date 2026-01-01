@@ -59,7 +59,7 @@ export default function HeroSlide() {
           transition={{ delay: 0.6 }}
           className="mt-8 text-sm tracking-widest uppercase text-[var(--text-muted)]"
         >
-          Tobago People's Party • Manifesto 2025
+          Tobago People's Party • <span className="font-bold">BLUEPRINT 2025 - 2045</span>
         </motion.p>
       </div>
 
