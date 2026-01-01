@@ -16,7 +16,7 @@ export default function PublicInfrastructureSlide() {
       ],
     },
     {
-      image: "https://images.unsplash.com/photo-1570125909232-eb263c188f7e?w=400&h=400&fit=crop",
+      image: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=400&h=400&fit=crop",
       title: "Transit Hubs",
       items: [
         "Central Transportation Hub",

@@ -14,18 +14,22 @@ export default function FoodSecuritySlide() {
     {
       image: "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=400&h=400&fit=crop",
       title: "Mega Farm Programme",
+      subtitle: "Friendship Agri-Park Project",
     },
     {
       image: "https://images.unsplash.com/photo-1605000797499-95a51c5269ae?w=400&h=400&fit=crop",
       title: "Young Farmers Agripreneurship",
+      subtitle: "$100,000 Loans for young farmers",
     },
     {
-      image: "https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=400&h=400&fit=crop",
+      image: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=400&h=400&fit=crop",
       title: "Tobago Agricultural Research Institute",
+      subtitle: null,
     },
     {
       image: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=400&h=400&fit=crop",
       title: "Agricultural Access Roads",
+      subtitle: null,
     },
   ];
 
@@ -37,11 +41,6 @@ export default function FoodSecuritySlide() {
   const fadeUp = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" as const } }
-  };
-
-  const scaleUp = {
-    hidden: { opacity: 0, scale: 0.95 },
-    visible: { opacity: 1, scale: 1, transition: { duration: 0.6, ease: "easeOut" as const } }
   };
 
   const staggerContainer = {
@@ -177,6 +176,15 @@ export default function FoodSecuritySlide() {
               <h3 className="text-sm font-bold text-green-700 leading-tight">
                 {prog.title}
               </h3>
+              
+              {prog.subtitle && (
+                <>
+                  <div className="h-2" />
+                  <p className="text-xs text-[var(--text-secondary)] italic">
+                    {prog.subtitle}
+                  </p>
+                </>
+              )}
             </motion.div>
           ))}
         </motion.div>

@@ -22,7 +22,7 @@ export default function AffordableHousingSlide() {
       ],
     },
     {
-      image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=400&fit=crop",
+      image: "https://images.unsplash.com/photo-1523217582562-09d0def993a6?w=400&h=400&fit=crop",
       title: "Modular Housing",
       subtitle: null,
       items: ["Low-cost homeownership"],

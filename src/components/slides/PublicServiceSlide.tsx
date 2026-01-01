@@ -150,7 +150,7 @@ export default function PublicServiceSlide() {
           className="flex-shrink-0 relative w-full lg:w-[450px] h-[400px] lg:h-[500px] rounded-3xl overflow-hidden shadow-2xl"
         >
           <Image
-            src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=900&h=1000&fit=crop"
+            src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=900&h=1000&fit=crop"
             alt="Government service and teamwork"
             fill
             className="object-cover"
