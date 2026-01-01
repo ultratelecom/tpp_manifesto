@@ -79,7 +79,7 @@ export default function DigitalSlide() {
               className="text-8xl font-bold text-[var(--text-primary)]"
               style={{ fontFamily: "var(--font-heading)" }}
             >
-              +200
+              +400
             </div>
             
             {/* SPACE */}
@@ -102,9 +102,13 @@ export default function DigitalSlide() {
             {/* SPACE */}
             <div className="h-4" />
             
-            <div className="text-lg text-[var(--text-secondary)] leading-loose">
-              {roles.join(" • ")}
-            </div>
+            <ul className="space-y-2">
+              {roles.map((role) => (
+                <li key={role} className="text-lg text-[var(--text-secondary)]">
+                  • {role}
+                </li>
+              ))}
+            </ul>
           </motion.div>
 
           {/* SPACE */}
