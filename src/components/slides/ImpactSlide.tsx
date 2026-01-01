@@ -8,21 +8,21 @@ export default function ImpactSlide() {
     { 
       image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=400&h=400&fit=crop",
       label: "Clean Energy", 
-      jobs: 400, 
+      jobs: 1000, 
       color: "#10B981",
       overlay: "bg-emerald-600"
     },
     { 
       image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=400&h=400&fit=crop",
       label: "Digital", 
-      jobs: 200, 
+      jobs: 400, 
       color: "#3B82F6",
       overlay: "bg-blue-600"
     },
     { 
       image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&h=400&fit=crop",
       label: "Infrastructure", 
-      jobs: 4275, 
+      jobs: 6775, 
       color: "#F59E0B",
       overlay: "bg-amber-600"
     },
