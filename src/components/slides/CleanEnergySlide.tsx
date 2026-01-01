@@ -96,7 +96,7 @@ export default function CleanEnergySlide() {
                 className="text-3xl font-bold text-[var(--text-primary)]"
                 style={{ fontFamily: "var(--font-heading)" }}
               >
-                +300
+                +400
               </div>
               <div className="h-2" />
               <div className="text-sm font-semibold text-[var(--text-primary)]">
@@ -113,7 +113,7 @@ export default function CleanEnergySlide() {
                 className="text-3xl font-bold text-[var(--text-primary)]"
                 style={{ fontFamily: "var(--font-heading)" }}
               >
-                +100
+                +400
               </div>
               <div className="h-2" />
               <div className="text-sm font-semibold text-[var(--text-primary)]">
@@ -151,7 +151,7 @@ export default function CleanEnergySlide() {
             <span className="text-2xl font-bold text-[var(--text-primary)]">
               Total Impact:{" "}
             </span>
-            <span className="text-2xl font-bold text-emerald-600">600 Jobs</span>
+            <span className="text-2xl font-bold text-emerald-600">1,000 Jobs</span>
           </motion.div>
         </motion.div>
       </div>
