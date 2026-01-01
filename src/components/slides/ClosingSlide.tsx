@@ -47,7 +47,7 @@ export default function ClosingSlide() {
             alt="Tobago People's Party Logo"
             width={144}
             height={144}
-            className="shadow-lg"
+            className=""
           />
         </motion.div>
 

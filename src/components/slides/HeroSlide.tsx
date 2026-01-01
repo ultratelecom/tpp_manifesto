@@ -38,7 +38,7 @@ export default function HeroSlide() {
             alt="Tobago People's Party Logo"
             width={120}
             height={120}
-            className="shadow-lg"
+            className=""
           />
         </motion.div>
 
