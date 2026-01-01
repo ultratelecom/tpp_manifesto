@@ -48,7 +48,7 @@ export default function CleanEnergySlide() {
           <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-black/30 to-transparent" />
           {/* Initiative label */}
           <div className="absolute bottom-5 left-5 text-white">
-            <div className="text-xs font-semibold tracking-widest uppercase opacity-80">
+            <div className="text-sm font-semibold tracking-widest uppercase opacity-80">
               Clean Energy
             </div>
           </div>
@@ -103,7 +103,7 @@ export default function CleanEnergySlide() {
                 Solar Incentive Jobs
               </div>
               <div className="h-1" />
-              <div className="text-xs text-[var(--text-secondary)]">
+              <div className="text-sm text-[var(--text-secondary)]">
                 Manufacturing, installation
               </div>
             </div>
@@ -120,7 +120,7 @@ export default function CleanEnergySlide() {
                 Public Building Jobs
               </div>
               <div className="h-1" />
-              <div className="text-xs text-[var(--text-secondary)]">
+              <div className="text-sm text-[var(--text-secondary)]">
                 Installation, maintenance
               </div>
             </div>
@@ -137,7 +137,7 @@ export default function CleanEnergySlide() {
                 Green Transportation
               </div>
               <div className="h-1" />
-              <div className="text-xs text-[var(--text-secondary)]">
+              <div className="text-sm text-[var(--text-secondary)]">
                 E-busses and charging stations
               </div>
             </div>

@@ -138,7 +138,7 @@ export default function EconomicGrowthSlide() {
                   <h3 className="text-sm font-bold text-[var(--text-primary)]">
                     {item.title}
                   </h3>
-                  <p className="text-xs text-[var(--text-secondary)]">
+                  <p className="text-sm text-[var(--text-secondary)]">
                     {item.description}
                   </p>
                 </div>

@@ -144,7 +144,7 @@ export default function AffordableHousingSlide() {
             {/* SPACE */}
             <div className="h-1" />
             
-            <div className="text-xs text-[var(--text-muted)]">
+            <div className="text-sm text-[var(--text-muted)]">
               Annual 2026-2045
             </div>
           </motion.div>
@@ -167,7 +167,7 @@ export default function AffordableHousingSlide() {
             {/* SPACE */}
             <div className="h-1" />
             
-            <div className="text-xs text-[var(--text-muted)]">
+            <div className="text-sm text-[var(--text-muted)]">
               Eligible households
             </div>
           </motion.div>
@@ -212,7 +212,7 @@ export default function AffordableHousingSlide() {
               {prog.subtitle && (
                 <>
                   <div className="h-1" />
-                  <div className="text-xs font-semibold text-rose-600">
+                  <div className="text-sm font-semibold text-rose-600">
                     {prog.subtitle}
                   </div>
                 </>
@@ -226,7 +226,7 @@ export default function AffordableHousingSlide() {
                 {prog.items.map((item, idx) => (
                   <li
                     key={idx}
-                    className="text-xs text-[var(--text-secondary)] leading-relaxed flex items-start gap-2"
+                    className="text-sm text-[var(--text-secondary)] leading-relaxed flex items-start gap-2"
                   >
                     <span className="text-rose-600 mt-0.5">•</span>
                     <span>{item}</span>

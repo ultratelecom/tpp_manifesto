@@ -223,7 +223,7 @@ export default function DefinitionSlide() {
               {pillar.subtext && (
                 <>
                   <div className="h-2" />
-                  <p className="text-xs text-[var(--text-muted)] italic">
+                  <p className="text-sm text-[var(--text-muted)] italic">
                     {pillar.subtext}
                   </p>
                 </>
@@ -231,7 +231,7 @@ export default function DefinitionSlide() {
               {pillar.subtext2 && (
                 <>
                   <div className="h-1" />
-                  <p className="text-xs text-[var(--text-muted)] italic">
+                  <p className="text-sm text-[var(--text-muted)] italic">
                     {pillar.subtext2}
                   </p>
                 </>

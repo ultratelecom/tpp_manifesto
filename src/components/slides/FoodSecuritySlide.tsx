@@ -135,7 +135,7 @@ export default function FoodSecuritySlide() {
               {/* SPACE */}
               <div className="h-1" />
               
-              <div className="text-xs text-[var(--text-muted)]">
+              <div className="text-sm text-[var(--text-muted)]">
                 {stat.sublabel}
               </div>
             </motion.div>
@@ -180,7 +180,7 @@ export default function FoodSecuritySlide() {
               {prog.subtitle && (
                 <>
                   <div className="h-2" />
-                  <p className="text-xs text-[var(--text-secondary)] italic">
+                  <p className="text-sm text-[var(--text-secondary)] italic">
                     {prog.subtitle}
                   </p>
                 </>

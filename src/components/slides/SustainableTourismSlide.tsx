@@ -161,7 +161,7 @@ export default function SustainableTourismSlide() {
               {/* SPACE */}
               <div className="h-1" />
               
-              <div className="text-xs text-[var(--text-muted)]">
+              <div className="text-sm text-[var(--text-muted)]">
                 {stat.sublabel}
               </div>
             </motion.div>

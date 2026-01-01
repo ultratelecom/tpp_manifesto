@@ -176,9 +176,9 @@ export default function PublicInfrastructureSlide() {
                 {item.items.map((point, idx) => (
                   <li
                     key={idx}
-                    className="text-xs text-[var(--text-secondary)] leading-tight flex items-start gap-1"
+                    className="text-sm text-[var(--text-secondary)] leading-tight flex items-start gap-1"
                   >
-                    <span className="text-orange-600 mt-0.5 text-xs">•</span>
+                    <span className="text-orange-600 mt-0.5 text-sm">•</span>
                     <span>{point}</span>
                   </li>
                 ))}

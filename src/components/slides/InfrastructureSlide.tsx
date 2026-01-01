@@ -168,7 +168,7 @@ export default function InfrastructureSlide() {
               {initiative.subtext && (
                 <>
                   <div className="h-1" />
-                  <p className="text-xs text-[var(--text-muted)] italic">
+                  <p className="text-sm text-[var(--text-muted)] italic">
                     {initiative.subtext}
                   </p>
                 </>
