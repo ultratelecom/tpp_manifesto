@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TPP Manifesto - Option 2: Blueprint (Wireframe)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --tpp-blue: #1E40AF;
+            --tpp-cyan: #06B6D4;
+            --tpp-navy: #0F172A;
+            --tpp-slate: #1E293B;
+            --tpp-light: #F8FAFC;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, var(--tpp-navy) 0%, #1a1a2e 50%, var(--tpp-slate) 100%);
+            color: white;
+            min-height: 100vh;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .wireframe-badge {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: rgba(6, 182, 212, 0.9);
+            color: black;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            z-index: 1000;
+            font-size: 12px;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 60px;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--glass-border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo-placeholder {
+            width: 50px;
+            height: 50px;
+            border: 2px dashed var(--tpp-cyan);
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 10px;
+            color: var(--tpp-cyan);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+        }
+
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--tpp-cyan);
+        }
+
+        .nav-dropdown {
+            background: var(--tpp-blue);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 60px;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(6, 182, 212, 0.2);
+            border: 1px solid var(--tpp-cyan);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--tpp-cyan);
+            margin-bottom: 30px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, white 0%, var(--tpp-cyan) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            opacity: 0.8;
+            max-width: 700px;
+            margin: 0 auto 50px;
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 40px 60px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--tpp-cyan);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.7;
+            margin-top: 5px;
+        }
+
+        .stat-bar {
+            width: 100%;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+            margin-top: 10px;
+            overflow: hidden;
+        }
+
+        .stat-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--tpp-blue), var(--tpp-cyan));
+            border-radius: 3px;
+        }
+
+        /* Policy Pillars */
+        .pillars-section {
+            padding: 80px 60px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            opacity: 0.7;
+        }
+
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .pillar-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 40px;
+            text-align: center;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pillar-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--tpp-blue), var(--tpp-cyan));
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .pillar-card:hover {
+            transform: translateY(-10px) rotateX(5deg);
+            border-color: var(--tpp-cyan);
+            box-shadow: 0 25px 50px rgba(6, 182, 212, 0.15);
+        }
+
+        .pillar-card:hover::before {
+            opacity: 1;
+        }
+
+        .pillar-icon {
+            font-size: 4rem;
+            margin-bottom: 25px;
+        }
+
+        .pillar-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .pillar-jobs {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--tpp-cyan);
+            margin: 20px 0 10px;
+        }
+
+        .pillar-card .expand-hint {
+            font-size: 0.85rem;
+            opacity: 0.5;
+            margin-top: 20px;
+        }
+
+        /* Expanded Card Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 200;
+            padding: 40px;
+        }
+
+        .modal-content {
+            background: var(--tpp-slate);
+            border: 1px solid var(--glass-border);
+            border-radius: 30px;
+            max-width: 900px;
+            width: 100%;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .modal-header {
+            padding: 40px;
+            background: linear-gradient(135deg, var(--tpp-blue), var(--tpp-cyan));
+            border-radius: 30px 30px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-header h2 {
+            font-size: 2rem;
+        }
+
+        .close-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .modal-body {
+            padding: 40px;
+        }
+
+        .modal-3d-placeholder {
+            background: rgba(6, 182, 212, 0.1);
+            border: 2px dashed var(--tpp-cyan);
+            border-radius: 20px;
+            height: 250px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 30px;
+            font-size: 0.9rem;
+            color: var(--tpp-cyan);
+        }
+
+        .modal-initiatives {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .initiative-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 25px;
+        }
+
+        .initiative-card h4 {
+            margin-bottom: 10px;
+            color: var(--tpp-cyan);
+        }
+
+        .initiative-card p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-bottom: 15px;
+        }
+
+        .initiative-jobs {
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        /* Targets Grid */
+        .targets-section {
+            padding: 80px 60px;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .targets-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .target-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .target-label {
+            font-size: 0.85rem;
+            opacity: 0.7;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .target-values {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .target-value {
+            text-align: center;
+        }
+
+        .target-value .number {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--tpp-cyan);
+        }
+
+        .target-value .year {
+            font-size: 0.75rem;
+            opacity: 0.6;
+        }
+
+        .target-arrow {
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Floating Job Counter */
+        .job-counter {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 50px;
+            padding: 15px 40px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            z-index: 100;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .counter-label {
+            font-size: 0.85rem;
+            opacity: 0.7;
+        }
+
+        .counter-number {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            background: linear-gradient(90deg, var(--tpp-blue), var(--tpp-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .counter-progress {
+            width: 150px;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .counter-progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--tpp-blue), var(--tpp-cyan));
+            width: 75%;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 60px;
+            text-align: center;
+            border-top: 1px solid var(--glass-border);
+            margin-bottom: 100px;
+        }
+
+        .footer p {
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="wireframe-badge">WIREFRAME - Option 2: Blueprint</div>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo-placeholder">TPP</div>
+        <div class="nav-links">
+            <a href="#">Overview</a>
+            <a href="#">Targets</a>
+            <a href="#">Initiatives</a>
+            <a href="#">Impact</a>
+        </div>
+        <button class="nav-dropdown">Jump to Section ▼</button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <span class="hero-badge">MANIFESTO 2025</span>
+        <h1>Tobago People's Party</h1>
+        <p>Sustainable & Meaningful Job Creation — Building a prosperous future for every Tobagonian</p>
+        
+        <div class="stats-bar">
+            <div class="stat-item">
+                <div class="stat-number">25%</div>
+                <div class="stat-label">Private Sector Growth by 2035</div>
+                <div class="stat-bar">
+                    <div class="stat-bar-fill" style="width: 50%;"></div>
+                </div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">15%</div>
+                <div class="stat-label">Public Sector Growth by 2035</div>
+                <div class="stat-bar">
+                    <div class="stat-bar-fill" style="width: 30%;"></div>
+                </div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">4,875+</div>
+                <div class="stat-label">Total Jobs Created</div>
+                <div class="stat-bar">
+                    <div class="stat-bar-fill" style="width: 100%;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Policy Pillars -->
+    <section class="pillars-section">
+        <div class="section-header">
+            <h2>Policy Pillars</h2>
+            <p>Click on any pillar to explore initiatives and job creation details</p>
+        </div>
+        
+        <div class="pillars-grid">
+            <div class="pillar-card">
+                <div class="pillar-icon">☀️</div>
+                <h3>Clean Energy Transition</h3>
+                <p style="opacity: 0.7;">Solar incentives and energy-efficient public buildings</p>
+                <div class="pillar-jobs">400 Jobs</div>
+                <div class="expand-hint">Click to expand →</div>
+            </div>
+            
+            <div class="pillar-card">
+                <div class="pillar-icon">💻</div>
+                <h3>Digital Transformation</h3>
+                <p style="opacity: 0.7;">Tobago Online program for digital modernization</p>
+                <div class="pillar-jobs">200 Jobs</div>
+                <div class="expand-hint">Click to expand →</div>
+            </div>
+            
+            <div class="pillar-card">
+                <div class="pillar-icon">🏗️</div>
+                <h3>Physical Infrastructure</h3>
+                <p style="opacity: 0.7;">Housing, tourism, heritage & road development</p>
+                <div class="pillar-jobs">4,275 Jobs</div>
+                <div class="expand-hint">Click to expand →</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expanded Modal Example -->
+    <div class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>☀️ Clean Energy Transition</h2>
+                <button class="close-btn">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-3d-placeholder">
+                    [3D Animation: Solar panels installing with energy flow visualization]
+                </div>
+                
+                <div class="modal-initiatives">
+                    <div class="initiative-card">
+                        <h4>Clean Energy Incentives</h4>
+                        <p>Incentivize businesses to transition to clean energy sources, including solar panels and solar home systems.</p>
+                        <div class="initiative-jobs">+300 Jobs</div>
+                    </div>
+                    <div class="initiative-card">
+                        <h4>Energy-Efficient Public Buildings</h4>
+                        <p>Transition all public buildings to renewable energy with efficient cooling and lighting.</p>
+                        <div class="initiative-jobs">+100 Jobs</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Targets Section -->
+    <section class="targets-section">
+        <div class="section-header">
+            <h2>Primary Targets</h2>
+            <p>Our measurable commitments to Tobago's workforce</p>
+        </div>
+        
+        <div class="targets-grid">
+            <div class="target-card">
+                <div class="target-label">Private Sector</div>
+                <div class="target-values">
+                    <div class="target-value">
+                        <div class="number">25%</div>
+                        <div class="year">by 2035</div>
+                    </div>
+                    <span class="target-arrow">→</span>
+                    <div class="target-value">
+                        <div class="number">35%</div>
+                        <div class="year">by 2045</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="target-card">
+                <div class="target-label">Public Sector</div>
+                <div class="target-values">
+                    <div class="target-value">
+                        <div class="number">15%</div>
+                        <div class="year">by 2035</div>
+                    </div>
+                    <span class="target-arrow">→</span>
+                    <div class="target-value">
+                        <div class="number">20%</div>
+                        <div class="year">by 2045</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="target-card">
+                <div class="target-label">Youth Employment</div>
+                <div class="target-values">
+                    <div class="target-value">
+                        <div class="number">15%</div>
+                        <div class="year">by 2035</div>
+                    </div>
+                    <span class="target-arrow">→</span>
+                    <div class="target-value">
+                        <div class="number">20%</div>
+                        <div class="year">by 2045</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <section class="footer">
+        <p>Tobago People's Party • Manifesto 2025</p>
+    </section>
+
+    <!-- Floating Job Counter -->
+    <div class="job-counter">
+        <span class="counter-label">TOTAL JOBS TO BE CREATED</span>
+        <span class="counter-number">4,875+</span>
+        <div class="counter-progress">
+            <div class="counter-progress-fill"></div>
+        </div>
+    </div>
+</body>
+</html>
+

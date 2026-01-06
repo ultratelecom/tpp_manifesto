@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TPP Manifesto - Design Options</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #0a0a0f;
+            color: white;
+            min-height: 100vh;
+            padding: 60px;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Sora', sans-serif;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #3B82F6, #8B5CF6);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, white 0%, #60A5FA 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.7;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .option-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .option-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(59, 130, 246, 0.5);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .option-preview {
+            height: 300px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .option-preview iframe {
+            width: 200%;
+            height: 200%;
+            transform: scale(0.5);
+            transform-origin: top left;
+            border: none;
+            pointer-events: none;
+        }
+
+        .option-preview-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, transparent 50%, rgba(10, 10, 15, 0.9) 100%);
+        }
+
+        .option-content {
+            padding: 30px;
+        }
+
+        .option-number {
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            opacity: 0.5;
+            margin-bottom: 10px;
+        }
+
+        .option-content h2 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .option-subtitle {
+            color: #60A5FA;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .option-content p {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            opacity: 0.7;
+            margin-bottom: 25px;
+        }
+
+        .option-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 25px;
+        }
+
+        .feature-tag {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 0.75rem;
+        }
+
+        .option-cta {
+            display: block;
+            text-align: center;
+            background: linear-gradient(135deg, #3B82F6, #8B5CF6);
+            color: white;
+            text-decoration: none;
+            padding: 15px;
+            border-radius: 12px;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .option-cta:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
+        }
+
+        .comparison-section {
+            margin-top: 80px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .comparison-section h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 40px;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 20px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .comparison-table th {
+            background: rgba(255, 255, 255, 0.05);
+            font-weight: 600;
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .rating {
+            color: #F59E0B;
+        }
+
+        .recommendation {
+            margin-top: 60px;
+            text-align: center;
+            padding: 50px;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1));
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 24px;
+        }
+
+        .recommendation h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #60A5FA;
+        }
+
+        .recommendation p {
+            font-size: 1.1rem;
+            opacity: 0.8;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <span class="badge">WIREFRAME PREVIEW</span>
+        <h1>TPP Manifesto Design Options</h1>
+        <p>Three distinct approaches for presenting the Tobago People's Party manifesto. Click to preview each option.</p>
+    </header>
+
+    <div class="options-grid">
+        <!-- Option 1 -->
+        <div class="option-card">
+            <div class="option-preview">
+                <iframe src="option1-horizons.html" loading="lazy"></iframe>
+                <div class="option-preview-overlay"></div>
+            </div>
+            <div class="option-content">
+                <div class="option-number">Option 01</div>
+                <h2>Horizons</h2>
+                <div class="option-subtitle">Immersive Parallax Journey</div>
+                <p>A vertical scrolling experience where each policy section unfolds like chapters in a story. Layered parallax creates depth and dimension.</p>
+                <div class="option-features">
+                    <span class="feature-tag">Parallax Layers</span>
+                    <span class="feature-tag">3D Island</span>
+                    <span class="feature-tag">Smooth Scroll</span>
+                    <span class="feature-tag">Storytelling</span>
+                </div>
+                <a href="option1-horizons.html" class="option-cta" target="_blank">View Full Preview →</a>
+            </div>
+        </div>
+
+        <!-- Option 2 -->
+        <div class="option-card">
+            <div class="option-preview">
+                <iframe src="option2-blueprint.html" loading="lazy"></iframe>
+                <div class="option-preview-overlay"></div>
+            </div>
+            <div class="option-content">
+                <div class="option-number">Option 02</div>
+                <h2>Blueprint</h2>
+                <div class="option-subtitle">Interactive Card Dashboard</div>
+                <p>A modern dashboard-style presentation with expandable cards. Clean navigation and floating job counter for continuous engagement.</p>
+                <div class="option-features">
+                    <span class="feature-tag">Card Layout</span>
+                    <span class="feature-tag">Click to Expand</span>
+                    <span class="feature-tag">Live Counter</span>
+                    <span class="feature-tag">Accessible</span>
+                </div>
+                <a href="option2-blueprint.html" class="option-cta" target="_blank">View Full Preview →</a>
+            </div>
+        </div>
+
+        <!-- Option 3 -->
+        <div class="option-card">
+            <div class="option-preview">
+                <iframe src="option3-vision.html" loading="lazy"></iframe>
+                <div class="option-preview-overlay"></div>
+            </div>
+            <div class="option-content">
+                <div class="option-number">Option 03</div>
+                <h2>Vision</h2>
+                <div class="option-subtitle">Cinematic Full-Screen Experience</div>
+                <p>Each section takes the full screen like a keynote presentation. Bold typography, dramatic transitions, and maximum impact.</p>
+                <div class="option-features">
+                    <span class="feature-tag">Full-Screen Slides</span>
+                    <span class="feature-tag">Scroll Snap</span>
+                    <span class="feature-tag">Bold Type</span>
+                    <span class="feature-tag">Cinematic</span>
+                </div>
+                <a href="option3-vision.html" class="option-cta" target="_blank">View Full Preview →</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Comparison Table -->
+    <section class="comparison-section">
+        <h2>Quick Comparison</h2>
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Feature</th>
+                    <th>Horizons</th>
+                    <th>Blueprint</th>
+                    <th>Vision</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Scroll Type</td>
+                    <td>Parallax Layers</td>
+                    <td>Natural Scroll</td>
+                    <td>Full-Screen Snap</td>
+                </tr>
+                <tr>
+                    <td>Animation Density</td>
+                    <td>High</td>
+                    <td>Medium</td>
+                    <td>Very High</td>
+                </tr>
+                <tr>
+                    <td>Information Density</td>
+                    <td>Medium</td>
+                    <td>High</td>
+                    <td>Low (Focused)</td>
+                </tr>
+                <tr>
+                    <td>Mobile Friendly</td>
+                    <td>Good</td>
+                    <td>Excellent</td>
+                    <td>Good</td>
+                </tr>
+                <tr>
+                    <td>Wow Factor</td>
+                    <td class="rating">⭐⭐⭐⭐</td>
+                    <td class="rating">⭐⭐⭐</td>
+                    <td class="rating">⭐⭐⭐⭐⭐</td>
+                </tr>
+                <tr>
+                    <td>Best For</td>
+                    <td>Storytelling</td>
+                    <td>Information</td>
+                    <td>Presentations</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="recommendation">
+            <h3>🏆 Recommended: Option 3 "Vision"</h3>
+            <p>For a political manifesto that needs to make a strong impression on voters, media, and the world stage, the cinematic full-screen experience delivers maximum impact while maintaining elegance and professionalism.</p>
+        </div>
+    </section>
+</body>
+</html>
+
