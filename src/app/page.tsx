@@ -65,8 +65,8 @@ export default function Home() {
       <main className="min-h-screen bg-linear-to-br from-[#0a0a1a] via-[#0d1b2a] to-[#1b263b]">
         {/* Persistent download button - mobile */}
         <a
-          href="/tpp_new_final.pdf"
-          download="tpp_new_final.pdf"
+          href="/tpp_new_final_2.pdf"
+          download="tpp_new_final_2.pdf"
           className="pdf-download-floating-mobile"
           onClick={(e) => e.stopPropagation()}
         >
